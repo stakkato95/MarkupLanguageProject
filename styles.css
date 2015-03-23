@@ -122,33 +122,20 @@ span {
 
 
 /*navigation menu*/
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-.cf {
-    *zoom: 1;
-}
-
-ul.navbar {
+ul.navigationBar {
     background: inherit;
     list-style-type: none;
-    padding-left: 4%;
+    padding: 0;
 }
 
-ul.navbar li {
+ul.navigationBar li {
     float: left;
     margin: 0;
+    padding: 0;
     position: relative;
 }
 
-ul.navbar li a {
+ul.navigationBar li a {
     display: block;
     padding: 13px 15px;
     color: #f9d401;
@@ -160,13 +147,13 @@ ul.navbar li a {
     font-size: 1.3em;
 }
 
-ul.navbar li a:hover,
-ul.navbar li:hover > a {
+ul.navigationBar li a:hover,
+ul.navigationBar li:hover > a {
     background: #f9d401;
     color: #ffffff;
 }
 
-ul.navbar li ul {
+ul.navigationBar li ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -180,28 +167,28 @@ ul.navbar li ul {
     transition: all .1s ease;
 }
 
-ul.navbar ul li {
+ul.navigationBar ul li {
     float: none;
 }
 
-ul.navbar li:hover > ul {
+ul.navigationBar li:hover > ul {
     opacity: 1;
     visibility: visible;
     left: 0;
 }
 
-ul.navbar > li:hover > ul {
+ul.navigationBar > li:hover > ul {
     opacity: 1;
     visibility: visible;
     top: 100%;
     left: 0;
 }
 
-ul.navbar li > ul ul {
+ul.navigationBar li > ul ul {
     top: 0;
     left: 100%;
 }
 
-ul.navbar li > ul li:hover > ul {
+ul.navigationBar li > ul li:hover > ul {
     left: 100%;
 }
