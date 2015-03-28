@@ -1,0 +1,70 @@
+ul.navigationBar {
+    background: inherit;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.navigationBar li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+ul.navigationBar li a {
+    display: block;
+    padding: 13px 15px;
+    color: #f9d401;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+ul.navigationBar li a:hover,
+ul.navigationBar li:hover > a {
+    background: #f9d401;
+    color: #ffffff;
+}
+
+ul.navigationBar li ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    background: #262626;
+    font-size: inherit;
+    min-width: 170px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    transition: all .1s ease;
+}
+
+ul.navigationBar ul li {
+    float: none;
+}
+
+ul.navigationBar li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+}
+
+ul.navigationBar > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    left: 0;
+}
+
+ul.navigationBar li > ul ul {
+    top: 0;
+    left: 100%;
+}
+
+ul.navigationBar li > ul li:hover > ul {
+    left: 100%;
+}

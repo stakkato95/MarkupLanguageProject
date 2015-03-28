@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Accessors</title>
+</head>
+<body style="margin: 0;">
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>Properties in C#</h3>
+
+                <p>
+                    A property is a member that provides a flexible mechanism to read, write, or compute the value of a
+                    private field. Properties can be used as if they are public data members, but they are actually
+                    special methods called accessors. This enables data to be accessed easily and still helps promote
+                    the safety and flexibility of methods.<br><br>
+                    In this example, the TimePeriod class stores a time period. Internally the class stores the time in
+                    seconds, but a property named Hours enables a client to specify a time in hours. The accessors for
+                    the Hours property perform the conversion between hours and seconds.
+
+                                <pre>class TimePeriod
+{
+    private double seconds;
+
+    public double Hours
+    {
+        get { return seconds / 3600; }
+        set { seconds = value * 3600; }
+    }
+}
+</pre>
+
+                <ul>
+                    <li>Properties enable a class to expose a public way of getting and setting values, while hiding
+                        implementation or verification code.
+                    </li>
+                    <li>A get property accessor is used to return the property value, and a set accessor is used to
+                        assign a new value. These accessors can have different access levels. For more information, see
+                        Restricting Accessor Accessibility (C# Programming Guide).
+                    </li>
+                    <li>The value keyword is used to define the value being assigned by the set accessor.</li>
+                    <li>Properties that do not implement a set accessor are read only.</li>
+                    <li>For simple properties that require no custom accessor code, consider the option of using
+                        auto-implemented properties. For more information, see Auto-Implemented Properties (C#
+                        Programming Guide).
+                    </li>
+                </ul>
+
+                </p>
+            </div>
+
+            <div class="articleDiv">
+                <h3>Properties in Java</h3>
+
+                <p>
+                    In Java mutator methods are used for this purposes. A mutator method is a method used to control
+                    changes to a variable. They are also widely known as setter methods. Often a setter is accompanied
+                    by a getter (also known as an accessor), which returns the value of the private member variable.<br><br>
+                    The alternative to defining mutator and accessor methods, or property blocks, is to give the
+                    instance variable some visibility other than private and access it directly from outside the
+                    objects. Much finer control of access rights can be defined using mutators and accessors. For
+                    example, a parameter may be made read-only simply by defining an accessor but not a mutator. The
+                    visibility of the two methods may be different; it is often useful for the accessor to be public
+                    while the mutator remains protected, package-private or internal.
+                <pre>public class Student {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+}
+                </pre>
+
+                </p>
+            </div>
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

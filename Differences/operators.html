@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/codeSnippets.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+</head>
+<body style="margin: 0;">
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>Operator Overloading in C#</h3>
+
+                <p>
+                    C# allows you to overload operators for use on your own classes. This makes it possible for a
+                    user-defined data type to look as natural and be as logical to use as a fundamental data type. For
+                    example, you might create a new data type called ComplexNumber to represent a complex number, and
+                    provide methods that perform mathematical operations on such numbers using the standard arithmetic
+                    operators, such as using the + operator to add two complex numbers.
+                    To overload an operator, you write a function that has the name operator followed by the symbol for
+                    the operator to be overloaded. For instance, this is how you would overload the + operator:<br><br>
+
+                    public static ComplexNumber operator+(ComplexNumber a, ComplexNumber b)<br><br>
+
+                    All operator overloads are static methods of the class. Also be aware that if you overload the
+                    equality (==) operator, you must overload the inequality operator (!=) as well. The < and >
+                    operators, and the <= and >= operators should also be overloaded in pairs.
+                    The full list of operators that can be overloaded is:
+                <ul>
+                    <li> Unary operators: +, -, !, ~, ++, --, true, false</li>
+                    <li> Binary operators: +, -, *, /, %, &, |, ^, <<, >>, ==, !=, >, <, >=, <=</li>
+                </ul>
+
+
+                </p>
+            </div>
+
+            <div class="articleDiv">
+                <h3>Operator Overloading in Java</h3>
+
+                <p>
+                    Java doesn't have operator overloading. You have to work around.
+                </p>
+            </div>
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

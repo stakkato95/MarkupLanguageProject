@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/codeStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/codeSnippets.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Code style</title>
+</head>
+<body style="margin: 0;">
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>C# code style</h3>
+
+                <p>
+                    <span class="do-this">do</span>Use PascalCasing for class names and method names.
+                <pre>public class ClientActivity
+{
+   public void ClearStatistics()
+   {
+      //...
+   }
+   public void CalculateStatistics()
+   {
+      //...
+   }
+}
+</pre>
+                <span class="do-this">do</span>use camelCasing for method arguments and local variables.
+                                <pre>public class UserLog
+{
+    public void Add(LogEvent logEvent)
+    {
+        int itemCount = logEvent.Items.Count;
+        // ...
+    }
+}
+</pre>
+                <span class="donot-this">do not</span>use Hungarian notation or any other type identification in
+                identifiers
+                                <pre>// Correct
+int counter;
+string name;
+
+// Avoid
+int iCounter;
+string strName;
+</pre>
+
+                <span class="donot-this">do not</span>use Screaming Caps for constants or readonly variables
+                                <pre>// Correct
+// Correct
+public static const string ShippingType = "DropShip";
+
+// Avoid
+public static const string SHIPPINGTYPE = "DropShip";
+</pre>
+
+                <span class="avoid-this">avoid</span>using Abbreviations. Exceptions: abbreviations commonly used as
+                names,
+                such as Id, Xml, Ftp, Uri
+                                <pre>// Correct
+UserGroup userGroup;
+Assignment employeeAssignment;
+
+// Avoid
+UserGroup usrGrp;
+Assignment empAssignment;
+
+// Exceptions
+CustomerId customerId;
+XmlDocument xmlDocument;
+FtpHelper ftpHelper;
+UriPart uriPart;
+</pre>
+
+                <span class="do-this">do</span>use PascalCasing for abbreviations 3 characters or more (2 chars are both
+                uppercase)
+                                <pre>HtmlHelper htmlHelper;
+FtpTransfer ftpTransfer;
+UIControl uiControl;
+</pre>
+
+                <span class="donot-this">do not</span>use Underscores in identifiers. Exception: you can prefix private
+                static variables
+                with an underscore.
+                                <pre>// Correct
+public DateTime clientAppointment;
+public TimeSpan timeLeft;
+
+// Avoid
+public DateTime client_Appointment;
+public TimeSpan time_Left;
+
+// Exception
+private DateTime _registrationDate;
+</pre>
+
+                <span class="do-this">do</span>use predefined type names instead of system type names like Int16,
+                Single, UInt64, etc
+                with an underscore.
+                                <pre>// Correct
+string firstName;
+int lastIndex;
+bool isSaved;
+
+// Avoid
+String firstName;
+Int32 lastIndex;
+Boolean isSaved;
+</pre>
+
+                <span class="do-this">do</span>use implicit type var for local variable declarations. Exception:
+                primitive types use predefined names.
+                with an underscore.
+                                <pre>var stream = File.Create(path);
+var customers = new Dictionary();
+
+// Exceptions
+int index = 100;
+string timeSheet;
+bool isCompleted;
+</pre>
+
+                </p>
+            </div>
+
+            <div class="articleDiv">
+                <h3>Java code style</h3>
+
+                <p>
+                    <span class="donot-this">do not</span>define all variables at the beginning of a block
+                <pre>{
+   double xold; // Don't
+   double xnew;
+   boolean more;
+   . . .
+}
+</pre>
+
+                <span class="do-this">do not</span>group the [] with the type, not the variable.
+                <pre>int[] values; // OK
+int values[]; // Ugh--this is an ugly holdover from C
+</pre>
+
+                <span class="avoid-this">avoid</span>the "if ... if ... else" trap. The code
+                <pre>if ( ... )
+   if ( ... ) ...;
+else ...;
+</pre>
+                will not do what the indentation level suggests, and it can take hours to find such a bug. Always use an
+                extra pair of { ... } when dealing with "if ... if ... else"
+                <pre>if ( ... )
+{
+   if ( ... ) ...;
+} // {...} are necessary
+else ...;
+
+if ( ... )
+{
+   if ( ... ) ...;
+   else ...;
+} // {...} not necessary, but they keep you out of trouble
+                </pre>
+
+                <span class="donot-this">do not</span>tag a method with an overly general exception specification
+                <pre>Widget readWidget(Reader in)
+   throws Exception // Bad
+</pre>
+                Instead, specifically declare any checked exceptions that your method may throw:
+                <pre>Widget readWidget(Reader in)
+   throws IOException, MalformedWidgetException // Good
+                </pre>
+
+                <span class="donot-this">do not</span>"squelch" exceptions
+                <pre>try
+{
+    double price = in.readDouble();
+}
+catch (Exception e)
+{} // Bad
+                </pre>
+
+                <span class="do-this">do</span>use tab stops every three columns, se blank lines freely to separate
+                parts of a method, use a blank space around every binary operator
+                <pre>x1 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);  // Good
+x1=(-b-Math.sqrt(b*b-4*a*c))/(2*a);//Bad
+                </pre>
+
+                </p>
+            </div>
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Enums</title>
+</head>
+<body style="margin: 0;">
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>Interfaces in C#</h3>
+
+                <p>
+                    An interface contains definitions for a group of related functionalities that a class or a struct
+                    can implement.
+                    By using interfaces, you can, for example, include behavior from multiple sources in a class. That
+                    capability is important in C# because the language doesn't support multiple inheritance of classes.
+                    In addition, you must use an interface if you want to simulate inheritance for structs, because they
+                    can't actually inherit from another struct or class.
+                    You define an interface by using the interface keyword, as the following example shows.
+
+                    <pre>interface IEquatable&lt;T&gt;
+{
+    bool Equals(T obj);
+}
+</pre>
+
+
+                Any class or struct that implements the IEquatable
+                &lt;T&gt; interface must contain a definition for an Equals method that matches the signature that the
+                interface specifies. As a result, you can count on a class that implements IEquatable
+                &lt;T&gt; to contain an Equals method with which an instance of the class can determine whether it's
+                equal to another instance of the same class.<br><br>
+                The definition of IEquatable &lt;T&gt; doesn’t provide an implementation for Equals. The interface
+                defines only the signature. In that way, an interface in C# is similar to an abstract class in which all
+                the methods are abstract. However, a class or struct can implement multiple interfaces, but a class can
+                inherit only a single class, abstract or not. Therefore, by using interfaces, you can include behavior
+                from multiple sources in a class.<br><br>
+                Interfaces can contain methods, properties, events, indexers, or any combination of those four member
+                types. For links to examples, see Related Sections. An interface can't contain constants, fields,
+                operators, instance constructors, destructors, or types. Interface members are automatically public, and
+                they can't include any access modifiers. Members also can't be static.<br><br>
+                To implement an interface member, the corresponding member of the implementing class must be public,
+                non-static, and have the same name and signature as the interface member.<br><br>
+                When a class or struct implements an interface, the class or struct must provide an implementation for
+                all of the members that the interface defines. The interface itself provides no functionality that a
+                class or struct can inherit in the way that it can inherit base class functionality. However, if a base
+                class implements an interface, any class that's derived from the base class inherits that
+                implementation.
+
+                An interface has the following properties:
+                <ul>
+                    <li>An interface is like an abstract base class. Any class or struct that implements the interface
+                        must implement all its members.
+                    </li>
+                    <li>An interface can't be instantiated directly. Its members are implemented by any class or struct
+                        that implements the interface.
+                    </li>
+                    <li>Interfaces can contain events, indexers, methods, and properties.</li>
+                    <li>Interfaces contain no implementation of methods.</li>
+                    <li>A class or struct can implement multiple interfaces. A class can inherit a base class and also
+                        implement one or more interfaces.
+                    </li>
+                </ul>
+
+                </p>
+
+                <h3>Explicit interface implementation in C#</h3>
+
+                <p>
+                    If a class implements two interfaces that contain a member with the same signature, then
+                    implementing that member on the class will cause both interfaces to use that member as their
+                    implementation. In the following example, all the calls to Paint invoke the same method.
+                    <pre>class Test
+{
+    static void Main()
+    {
+        SampleClass sc = new SampleClass();
+        IControl ctrl = (IControl)sc;
+        ISurface srfc = (ISurface)sc;
+
+        // The following lines all call the same method.
+        sc.Paint();
+        ctrl.Paint();
+        srfc.Paint();
+    }
+}
+
+
+interface IControl
+{
+    void Paint();
+}
+interface ISurface
+{
+    void Paint();
+}
+class SampleClass : IControl, ISurface
+{
+    // Both ISurface.Paint and IControl.Paint call this method.
+    public void Paint()
+    {
+        Console.WriteLine("Paint method in SampleClass");
+    }
+}
+
+// Output:
+// Paint method in SampleClass
+// Paint method in SampleClass
+// Paint method in SampleClass</pre>
+
+                If the two interface members do not perform the same function, however, this can lead to an incorrect
+                implementation of one or both of the interfaces. It is possible to implement an interface member
+                explicitly—creating a class member that is only called through the interface, and is specific to that
+                interface. This is accomplished by naming the class member with the name of the interface and a period.
+                For example:
+
+                <pre>public class SampleClass : IControl, ISurface
+{
+    void IControl.Paint()
+    {
+        System.Console.WriteLine("IControl.Paint");
+    }
+    void ISurface.Paint()
+    {
+        System.Console.WriteLine("ISurface.Paint");
+    }
+}</pre>
+
+                The class member IControl.Paint is only available through the IControl interface, and ISurface.Paint is
+                only available through ISurface. Both method implementations are separate, and neither is available
+                directly on the class. For example:
+
+                <pre>// Call the Paint methods from Main.
+
+SampleClass obj = new SampleClass();
+//obj.Paint();  // Compiler error.
+
+IControl c = (IControl)obj;
+c.Paint();  // Calls IControl.Paint on SampleClass.
+
+ISurface s = (ISurface)obj;
+s.Paint(); // Calls ISurface.Paint on SampleClass.
+
+// Output:
+// IControl.Paint
+// ISurface.Paint</pre>
+
+                Explicit implementation is also used to resolve cases where two interfaces each declare different
+                members of the same name such as a property and a method:
+
+                <pre>interface ILeft
+{
+    int P { get;}
+}
+interface IRight
+{
+    int P();
+}</pre>
+
+                To implement both interfaces, a class has to use explicit implementation either for the property P, or
+                the method P, or both, to avoid a compiler error. For example:
+
+                <pre>class Middle : ILeft, IRight
+{
+    public int P() { return 0; }
+    int ILeft.P { get { return 0; } }
+}</pre>
+
+                </p>
+
+            </div>
+
+            <div class="articleDiv">
+                <h3>Interfaces in Java</h3>
+
+                <p>
+                    An interface declaration consists of modifiers, the keyword interface, the interface name, a
+                    comma-separated list of parent interfaces (if any), and the interface body. For example:
+                <pre>public interface GroupedInterface extends Interface1, Interface2, Interface3 {
+
+    // constant declarations
+
+    // base of natural logarithms
+    double E = 2.718282;
+
+    // method signatures
+    void doSomething (int i, double x);
+    int doSomethingElse(String s);
+}
+                </pre>
+
+                <p/>
+
+                <h3>Evolving interfaces in Java</h3>
+
+                <p>
+                    Consider an interface that you have developed called DoIt:
+                    <pre>public interface DoIt {
+   void doSomething(int i, double x);
+   int doSomethingElse(String s);
+}</pre>
+                Suppose that, at a later time, you want to add a third method to DoIt, so that the interface now
+                becomes:
+
+                <pre>public interface DoIt {
+
+   void doSomething(int i, double x);
+   int doSomethingElse(String s);
+   boolean didItWork(int i, double x, String s);
+
+}</pre>
+
+                If you make this change, then all classes that implement the old DoIt interface will break because they
+                no longer implement the old interface. Programmers relying on this interface will protest
+                loudly.<br><br>
+                Try to anticipate all uses for your interface and specify it completely from the beginning. If you want
+                to add additional methods to an interface, you have several options. You could create a DoItPlus
+                interface that extends DoIt:
+
+                <pre>public interface DoItPlus extends DoIt {
+
+   boolean didItWork(int i, double x, String s);
+
+}</pre>
+
+                Now users of your code can choose to continue to use the old interface or to upgrade to the new
+                interface.<br><br>
+                Alternatively, you can define your new methods as default methods. The following example defines a
+                default method named didItWork:
+
+                <pre>public interface DoIt {
+
+   void doSomething(int i, double x);
+   int doSomethingElse(String s);
+   default boolean didItWork(int i, double x, String s) {
+       // Method body
+   }
+
+}</pre>
+
+                Note that you must provide an implementation for default methods. You could also define new static
+                methods to existing interfaces. Users who have classes that implement interfaces enhanced with new
+                default or static methods do not have to modify or recompile them to accommodate the additional methods.
+
+                </p>
+
+                <h3>Default interface methods in Java</h3>
+
+                <p>
+                    Default methods enable you to add new functionality to the interfaces of your libraries and ensure
+                    binary compatibility with code written for older versions of those interfaces.<br><br>
+                    Consider the following interface, TimeClient:
+
+                    <pre>public interface TimeClient {
+    void setTime(int hour, int minute, int second);
+    void setDate(int day, int month, int year);
+    void setDateAndTime(int day, int month, int year,
+                               int hour, int minute, int second);
+    LocalDateTime getLocalDateTime();
+}</pre>
+
+                Suppose that you want to add new functionality to the TimeClient interface, such as the ability to
+                specify a time zone through a ZonedDateTime object (which is like a LocalDateTime object except that it
+                stores time zone information):
+
+                <pre>public interface TimeClient {
+    void setTime(int hour, int minute, int second);
+    void setDate(int day, int month, int year);
+    void setDateAndTime(int day, int month, int year,
+        int hour, int minute, int second);
+    LocalDateTime getLocalDateTime();
+    ZonedDateTime getZonedDateTime(String zoneString);
+}</pre>
+
+                Following this modification to the TimeClient interface, you would also have to modify the class
+                SimpleTimeClient and implement the method getZonedDateTime. However, rather than leaving
+                getZonedDateTime as abstract (as in the previous example), you can instead define a default
+                implementation. (Remember that an abstract method is a method declared without an implementation.)
+
+                <pre>public class TestSimpleTimeClient {
+    public static void main(String... args) {
+        TimeClient myTimeClient = new SimpleTimeClient();
+        System.out.println("Current time: " + myTimeClient.toString());
+        System.out.println("Time in California: " +
+            myTimeClient.getZonedDateTime("Blah blah").toString());
+    }
+}</pre>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

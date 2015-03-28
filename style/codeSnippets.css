@@ -1,0 +1,11 @@
+.codeOperator {
+    color: blue;
+}
+
+.codeClassIface {
+    color: #2B91AF;
+}
+
+pre {
+    margin-bottom: 30px;
+}
