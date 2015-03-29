@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Generics</title>
+</head>
+<body>
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>Type erasure versus reified generics</h3>
+
+                <p>
+                    Generics in Java are a language-only construction; they are implemented only in the compiler. The
+                    generated classfiles include generic signatures only in form of metadata (allowing the compiler to
+                    compile new classes against them). The runtime has no knowledge of the generic type system; generics
+                    are not part of the JVM. Instead, generics classes and methods are transformed during compilation
+                    through a process known as type erasure. During this process the compiler replaces all generic types
+                    with their raw version and inserts casts/checks appropriately in client code where the type and its
+                    methods are used. The resulting byte code will contain no references to any generic types or
+                    parameters (See also Generics in Java).<br><br>
+                    The language specification intentionally prohibits certain uses of generics; this is necessary to
+                    allow for implementing generics through type erasure, and to allow for migration
+                    compatibility.<br><br>
+                    C# builds on support for generics from the virtual execution system itself, i.e. it is not just a
+                    language feature. The language is merely a front-end for cross-language generics support in the CLR.
+                    During compilation generics are verified for correctness, but code generation for actually
+                    implementing the generics are deferred to class-load time. Client code (code invoking generic
+                    methods/properties) are fully compiled and can safely assume generics to be type-safe. This is
+                    called reification. At runtime, when a unique set of type parameters for a generic
+                    class/method/delegate is encountered for the first time, the class loader/verifier will synthesize a
+                    concrete class descriptor and generate method implementations. During the generation of method
+                    implementations all reference types will be considered a single type, as reference types can safely
+                    share the same implementations. Note, this is merely for the purpose of implementing code. Different
+                    sets of reference types will still have unique type descriptors; their method tables will merely
+                    point to the same code.<br><br>
+                    The following list illustrates some differences between Java and C# when managing generics. It is
+                    not exhaustive:
+                </p>
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Java</th>
+                        <th>C#</th>
+                    </tr>
+                    <tr>
+                        <td>Type checks and downcasts are injected into client code (the code referencing the generics).
+                            Compared to non-generic code with manual casts, these casts will be the same,[56] but
+                            compared to compile-time verified code that would not need runtime casts and checks, these
+                            operations represent a performance overhead.
+                        </td>
+                        <td>C#/.NET generics guarantee type-safety and are verified at compile time, making extra
+                            checks/casts are unnecessary at runtime. Hence, generic code will run faster than
+                            non-generic (or type-erased) code that require casts when handling non-generic or
+                            type-erased objects.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cannot use primitive types as type parameters; instead, the developer must use the wrapper
+                            type corresponding to the primitive type. This incurs extra performance overhead by
+                            requiring boxing and unboxing conversions as well a memory and garbage collection pressure,
+                            as the wrappers will be heap-allocated as opposed to stack-allocated.
+                        </td>
+                        <td>Primitive and value types are allowed as type parameters in generic realizations. At runtime
+                            code will be synthesized and compiled for each unique combination of type parameters upon
+                            first use. Generics that are realized with primitive/value type do not require
+                            boxing/unboxing conversions.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Generic exceptions are not allowed[57] and a type parameter cannot be used in a catch
+                            clause
+                        </td>
+                        <td>Can both define generic exceptions and use those in catch clauses</td>
+                    </tr>
+                    <tr>
+                        <td>Static members are shared across all generic realizations[59] (during type erasure all
+                            realizations are folded into a single class)
+                        </td>
+                        <td>Static members are separate for each generic realization. A generic realization is a unique
+                            class.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type parameters cannot be used in declarations of static fields/methods or in definitions of
+                            static inner classes
+                        </td>
+                        <td>No restrictions on use of type parameters</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cannot create an array where the component type is a generic realization (concrete
+                            parameterized type)
+                            <pre>Object tenPairs =
+    new Pair&lt;Integer, String&gt;[10]; // error</pre>
+                        </td>
+                        <td>
+                            A generic realization is a 1st class citizen and can be used as any other class; also an
+                            array component
+                            <pre>object tenPairs =
+    new Pair&lt;int, string&gt;[10]; // OK</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cannot create an array where the component type is a type parameter
+                        <pre>public class Lookup&lt;TKey,TValue&gt; {
+    public TValue[] getEmptyValues(TKey key) {
+        return new TValue[0]; // error
+    }
+}</pre>
+                        </td>
+                        <td>
+                            Type parameters represent actual, discrete classes and can be used like any other type
+                            within the generic definition.
+                            <pre>public class Lookup&lt;TKey,TValue&gt;
+{
+    public TValue[] GetEmptyValues(TKey key)
+    {
+        return new TValue[0]; // OK
+    }
+}</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>There is no class literal for a concrete realization of a generic type</td>
+                        <td>A generic realization is an actual class.</td>
+                    </tr>
+                    <tr>
+                        <td>instanceof is not allowed with type parameters or concrete generic realizations</td>
+                        <td>The is and as operators work the same for type parameters as for any other type.</td>
+                    </tr>
+                    <tr>
+                        <td>Cannot create new instances using a type parameter as the type</td>
+                        <td>With a constructor constraint, generic methods or methods of generic classes can create
+                            instances of classes that have default constructors.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type information is erased during compilation. Special extensions to reflection must be used
+                            to discover the original type.
+                        </td>
+                        <td>Type information about C# generic types is fully preserved at runtime, and allows complete
+                            reflection support as well as instantiation of generic types.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reflection cannot be used to construct new generic realizations. During compilation extra
+                            code (typecasts) are injected into the client code of generics. This precludes creating new
+                            realizations later.
+                        </td>
+                        <td>Reflection can be used to create new realizations for new combinations of type parameters.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    C# allows generics directly for primitive types. Java, instead, allows the use of boxed types as
+                    type parameters (e.g., List &lt;Integer&gt; instead of List&lt;int&gt;). This comes at a cost since
+                    all such values need to be boxed/unboxed when used, and they all need to be heap-allocated. However,
+                    a generic type can be specialized with an array type of a primitive type in Java, for example List&lt;int[]&gt;
+                    is allowed.
+                </p>
+
+            </div>
+
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

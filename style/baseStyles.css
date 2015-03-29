@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 h1 {
     color: #f9d401;
     font-family: sans-serif;
@@ -29,10 +33,36 @@ p {
     text-align: justify;
 }
 
+/*lists*/
 li {
     margin-top: 5px;
     text-align: justify;
 }
+
+ul.innerList {
+    list-style: disc;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+/*tables*/
+table, th, td {
+    border: 1px solid #777777;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+caption {
+    font-weight: bold;
+}
+
 
 .headerDiv {
     background-color: #262626;

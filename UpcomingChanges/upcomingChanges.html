@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Upcoming changes</title>
+</head>
+<body>
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>C#</h3>
+
+                <h3>1. Initializers for auto-properties</h3>
+
+                <p>
+                    You can now add an initializer to an auto-property, just as you can a field:
+                </p>
+
+                <pre>public class Customer
+{
+    public string First { get; set; } = "Jane";
+    public string Last { get; set; } = "Doe";
+}</pre>
+
+                <p>
+                    The initializer directly initializes the backing field; it doesn't work through the setter of the
+                    auto-property. For this reason it now makes sense to have auto-properties without setters:
+                </p>
+
+                <pre>public class Customer
+{
+    public string First { get; } = "Jane";
+    public string Last { get; } = "Doe";
+}</pre>
+
+                <p>
+                    Getter-only auto-props are allowed as long as there's an initializer. Otherwise it would never be
+                    able to contain any other value than the default value of the type.<br><br>
+                    Just like field initializers, auto-property initializers cannot reference 'this' - after all they
+                    are executed before the object is properly initialized. This would mean that there aren't a whole
+                    lot of interesting choices for what to initialize the auto-properties to. Especially getter-only
+                    auto-properties would seem kind of useless if they couldn't somehow acquire values passed in to
+                    constructors of the object. However, primary constructors change that. Auto-property initializers
+                    and primary constructors thus enhance each other.
+                </p>
+
+                <h3>2. Primary constructors</h3>
+
+                <p>
+                    Primary constructors allow constructor parameters to be declared directly on the class or struct,
+                    without an explicit constructor declaration in the body of the type declaration. These parameters
+                    are in scope as simple names for initialization throughout the whole class declaration.<br><br>
+                    Note: We changed the design, and the following describes the new design. However, the changes didn't
+                    make it in in time for the preview build, so you'll still see the old semantics: parameters are
+                    captured implicitly and there is no syntax for explicit capture.
+                </p>
+
+                <h3>2.1 Parameters on classes and structs</h3>
+
+                <p>
+                    Here's an example of a class with a primary constructor:
+                </p>
+
+                <pre>public class Customer(string first, string last)
+{
+    public string First { get; } = first;
+    public string Last { get; } = last;
+}</pre>
+
+                <p>
+                    Achieving the same effect without primary constructors would have required private fields to hold
+                    the values of first and last, an explicit constructor to initialize them, and a getter body in First
+                    and Last to expose them:
+                </p>
+
+                <pre>public class Customer
+{
+    private string first;
+    private string last;
+
+    public string First { get { return first; } }
+    public string Last { get { return last; } }
+
+    public Customer(string first, string last)
+    {
+        this.first = first;
+        this.last = last;
+    }
+
+}</pre>
+                <p>
+                    Just to give you a sense of how much boilerplate this saves, I've highlighted the unnecessary chunks
+                    that are removed by the use of primary constructor and initialized getter-only
+                    auto-properties.<br><br>
+                    This is about expressing types more concisely, but note that it also removes an important difference
+                    in the language between mutable and immutable types: auto-properties were a shorthand available only
+                    if you were willing to make your class mutable, and so the temptation to default to that was great.
+                    Now, with getter-only auto-properties, the playing field has been leveled between mutable and
+                    immutable.<br><br>
+                    There is currently no way to specify an explicit constructor body for a primary constructor. We
+                    didn't land on a good syntax for this, and are not sure how important it is, since most of
+                    constructor bodies are usually initialization anyway. However, many have brought up constructor
+                    argument validation as something you'd often want to express.<br><br>
+                </p>
+
+                <h3>2.2 Field parameters</h3>
+
+                <p>
+                    Note: Field parameters don't work in the current prototype.<br><br>
+                    By default, a primary constructor parameter is only around at initialization time. Function members
+                    such as properties and methods cannot refer to it, because by the time they are called, the object
+                    has been constructed and the parameter is gone.<br><br>
+                    We considered (and experimented with) letting parameters be implicitly "captured" into compiler
+                    generated private fields if they were used after construction, but that lead to wasteful and buggy
+                    code where parameters were too often unintentionally captured into fields.<br><br>
+                    Of course you can declare your own private field and initialize it with a parameter:
+                </p>
+
+                <pre>public class Customer(string first, string last, DateTime bday)
+{
+    public string First { get; } = first;
+    public string Last { get; } = last;
+
+    private DateTime _bday = bday;
+}</pre>
+
+                <p>
+                    Unfortunately the private field wouldn't be able to use the same name as the parameter, and needs an
+                    alternative name, e.g. with an underbar in front.<br><br>
+                    To avoid this, we give you syntax to explicitly capture primary constructor parameters into fields:
+                </p>
+
+                <pre>public class Customer(string first, string last, private DateTime bday)
+{
+    public string First { get; } = first;
+    public string Last { get; } = last;
+}</pre>
+
+                <p>
+                    When you put an accessibility modifier (most likely private) on a primary constructor parameter it
+                    means make a parameter and a field with the same name, and initialize the field with the parameter.
+                    This way, you get to reference it in methods and properties, not just during initialization:
+                </p>
+
+                <pre>public int Age { get { return ComputeAge(bday); } }</pre>
+
+                <h3>2.3 Explicit constructors</h3>
+
+                <p>
+                    A class declaration with a primary constructor can still define other constructors. However, to
+                    ensure that arguments actually get passed to the primary constructor parameters, all other
+                    constructors must call a this(…) initializer:
+                </p>
+
+                <pre>public Point() : this(0, 0) {} // calls the primary constructor</pre>
+
+                <h3>2.4 Base initializer</h3>
+
+                <p>
+                    The primary constructor always implicitly or explicitly calls a base initializer. If no base
+                    initializer is specified, just like all constructors it will default to calling a parameterless base
+                    constructor.<br><br>
+                    The way to explicitly call the base initializer is to pass an argument list to a base class
+                    specifier:
+                </p>
+
+                <pre>class BufferFullException() : Exception("Buffer full") { … }</pre>
+
+                <h3>3. Using static</h3>
+
+                <p>
+                    Note: The current implementation of this feature does not reflect the current design. More details
+                    below.<br><br>
+                    The feature allows specifying a type in a using clause, making all the accessible static members of
+                    the type available without qualification in subsequent code:
+                </p>
+
+                <pre>using System.Console;
+using System.Math;
+
+class Program
+{
+    static void Main()
+    {
+        WriteLine(Sqrt(3*3 + 4*4));
+    }
+}</pre>
+                <p>
+                    This feature clearly has the ability to make your code shorter. There's a concern that it can
+                    clutter up your namespace, and cause weird ambiguities, especially with classes that weren't
+                    authored to be "opened up" like that. How many Create(…) methods can one handle without being
+                    confused about what you're creating?
+                </p>
+
+                <h3>3.1 Extension methods</h3>
+
+                <p>
+                    Extension methods are static methods. This raises a question about how a using static should bring
+                    them in. As a top level method in scope? As an extension method? Both? Let's look at an example:
+                </p>
+
+                <pre>using System.Linq.Enumerable; // Just the type, not the whole namespace
+
+class Program
+{
+    static void Main()
+    {
+        var range = Range(5, 17); // (1)
+
+        var odd = Where(range, i => i % 2 == 1); // (2)
+
+        var even = range.Where(i => i % 2 == 0); // (3)
+    }
+}</pre>
+                <p>
+                    Range is an ordinary static method so the call marked (1) is and should be allowed. The current
+                    implementation doesn't do anything special for extension methods, so it allows the call to Where as
+                    a static method in (2), but not as an extension method in (3).<br><br>
+                    This is not what we intend. Allowing (3) would give us a long asked-for way to bring in extension
+                    methods more selectively per type they are defined in, rather than just per namespace. On the other
+                    hand, extension methods were rarely designed to be used as static methods (that is just a fallback
+                    for the rare case where there are ambiguities), and we do not really want them to clutter up the
+                    top-level namespace. So we want to disallow (2). We hope to make these changes in a future CTP.
+                </p>
+
+                <h3>4. Declaration expressions</h3>
+
+                <p>
+                    Declaration expressions allow you to declare local variables in the middle of an expression, with or
+                    without an initializer. Here are some examples:
+                </p>
+
+                <pre>if (int.TryParse(s, out int i)) { … }
+
+GetCoordinates(out var x, out var y);
+
+Console.WriteLine("Result: {0}", (int x = GetValue()) * x);
+
+if ((string s = o as string) != null) { … s … }</pre>
+
+                <p>
+                    This is particularly useful for out parameters, where you no longer have to declare variables on a
+                    separate line to pass in. This is neat even in the best of cases, but in some scenarios where only
+                    expressions are allowed, it is necessary for using out parameters. In query clauses for example:
+                </p>
+
+                <pre>from s in strings
+select int.TryParse(s, out int i) ? i : -1;</pre>
+
+                <h3>5. Exception filters</h3>
+
+                <p>
+                    VB has them. F# has them. Now C# has them too. This is what they look like:
+                </p>
+
+                <pre>try { … }
+
+catch (MyException e) if (myfilter(e))
+{
+ …
+}</pre>
+                <p>
+                    If the parenthesized expression evaluates to true, the catch block is run, otherwise the exception
+                    keeps going.<br><br>
+                    Exception filters are preferable to catching and rethrowing because they leave the stack unharmed.
+                    If the exception later causes the stack to be dumped, you can see where it originally came from,
+                    rather than just the last place it was rethrown.
+                </p>
+
+                <h3>6. Binary literals and digit separators</h3>
+
+                <p>
+                    We want to allow binary literals in C#. No longer will you need to belong to the secret brotherhood
+                    of Hex in order to specify bit vectors or flags values!
+                </p>
+
+                <pre>var bits = 0b00101110;</pre>
+
+                <p>For long literals (and these new binary ones can easily get long!) being able to specify digits in
+                    groups also seems useful. C# will allow an underbar '_' in literals to separate such groups:</p>
+
+                <pre>var bits = 0b0010_1110;
+
+var hex = 0x00_2E;
+
+var dec = 1_234_567_890;</pre>
+
+                <p>
+                    You can put as many as you want, wherever you want, except at the front.
+                </p>
+
+                <h3>7. Indexed members and element initializers</h3>
+
+                <p>
+                    Object and collection initializers are useful for declaratively initializing fields and properties
+                    of objects, or giving a collection an initial set of elements. Initializing dictionaries is less
+                    elegant. We are adding a new syntax to object initializers allowing you to set values to keys
+                    through any indexer that the new object has:
+                </p>
+
+                <pre>var numbers = new Dictionary<int, string>
+{
+    [7] = "seven",
+    [9] = "nine",
+    [13] = "thirteen"
+};</pre>
+                <p>
+                    Specifically if the keys are strings, you sometimes want to think of them almost as a weak kind of
+                    members of the object. This is the case for instance if you have semi-structured data in wire
+                    formats such as JSON, that is "object-like" but not strongly typed in C# itself. We are adding a
+                    syntax for "indexed members", which let you pretend that a literal string key is a sort of member:
+                </p>
+
+                <pre>var customer = new JsonData
+{
+    $first = "Anders", // => ["first"] = "Anders"
+    $last = "Hejlsberg" // => ["last"] = "Hejlsberg"
+}
+
+string first = customer.$first; // => customer["first"]</pre>
+
+                <p>
+                    Indexed members are indicated by a \$ sign, and can be used in object initializers and member
+                    access. They just translate down to indexing with string literals, so they can be used wherever the
+                    receiving object has an indexer that takes a single string index.
+                </p>
+
+                <h3>8. Await in catch and finally blocks</h3>
+
+                <p>
+                    In C# 5.0 we don't allow the await keyword in catch and finally blocks, because we'd somehow
+                    convinced ourselves that it wasn't possible to implement. Now we've figured it out, so apparently it
+                    wasn't impossible after all.<br><br>
+                    This has actually been a significant limitation, and people have had to employ unsightly workarounds
+                    to compensate. That is no longer necessary:
+                </p>
+
+                <pre>Resource res = null;
+
+try
+{
+    res = await Resource.OpenAsync(…); // You could do this.
+    …
+}
+catch(ResourceException e)
+{
+    await Resource.LogAsync(res, e); // Now you can do this …
+}
+finally
+{
+    if (res != null) await res.CloseAsync(); // … and this.
+}</pre>
+                <p>
+                    The implementation is quite complicated, but you don't have to worry about that. That's the whole
+                    point of having async in the language.
+                </p>
+
+                <h3>9. Extension Add methods in collection initializers</h3>
+
+                <p>
+                    When we first implemented collection initializers in C#, the Add methods that get called couldn't be
+                    extension methods. VB got it right from the start, but it seems we forgot about it in C#. This has
+                    been fixed: the code generated from a collection initializer will now happily call an extension
+                    method called Add. It's not much of a feature, but it's occasionally useful, and it turned out
+                    implementing it in the new compiler amounted to removing a check that prevented it.<br><br>
+                </p>
+
+            </div>
+
+            <div class="articleDiv">
+                <h3>Java</h3>
+
+                <h3>1. Project Jigsaw – Modular Source Code</h3>
+
+                <p>
+                    Project Jigsaw’s goal is to make Java modular and break the JRE to interoperable components, one of
+                    the most hyped features for Java 9. This JEP is the first out of 4 steps towards Jigsaw and will not
+                    change the actual structure of the JRE and JDK. The purpose of this step is to reorganize the JDK
+                    source code into modules, enhance the build system to compile modules, and enforce module boundaries
+                    at build time. The project was originally intended for Java 8 but was delayed since and retargeted
+                    at Java 9.<br><br>
+                    Once it’s finished, it would allow creating a scaled down runtime Jar (rt.jar) customised to the
+                    components a project actually needs. The JDK 7 and JDK 8 rt.jar’s have about 20,000 classes that are
+                    part of the JDK even if many of them aren’t really being used in a specific envrionment (although a
+                    partial solution is included in the Java 8 compact profiles feature). The motivation behind this is
+                    to make Java easily scalable to small computing devices (Internet of Things), improve security and
+                    performance, and make it easier for developers to construct and maintain libraries.
+                </p>
+
+                <h3>2. Process API Updates</h3>
+
+                <p>
+                    So far there has been a limited ability for controlling and managing operating system processes with
+                    Java. For example, in order to do something as simple as get your process PID today, you would need
+                    to either access native code or use some sort of a workaround. More than that, it would require a
+                    different implementation for each platform to guarantee you’re getting the right result.<br><br>
+                    In Java 9, expect the code for retrieving Linux PIDs, that now looks like this:
+                </p>
+                <pre>public static void main(String[] args) throws Exception {
+   Process proc = Runtime.getRuntime().exec(new String[]{ "/bin/sh", "-c", "echo $PPID" });
+
+   if (proc.waitFor() == 0) {
+      InputStream in = proc.getInputStream();
+      int available = in.available();
+      byte[] outputBytes = new byte[available];
+
+      in.read(outputBytes);
+      String pid = new String(outputBytes);
+
+      System.out.println("Your pid is " + pid);
+   }
+}</pre>
+                <p>
+                    To turn into something like this (that also supports all operating systems):
+                </p>
+
+                <pre>System.out.println("Your pid is " + Process.getCurrentPid());</pre>
+
+                <p>
+                    The update will extend Java’s ability to to interact with the operating system: New direct methods
+                    to handle PIDs, process names and states, and ability to enumerate JVMs and processes and more.
+                </p>
+
+                <h3>3. Light-Weight JSON API</h3>
+
+                <p>
+                    Currently there are alternatives available for handling JSON in Java, what’s unique about this API
+                    is
+                    that it would be part of the language, lightweight and would use the new capabilities of Java 8. And
+                    will be delivered right through java.util (Unlike JSR 353 which uses an external package or other
+                    alternatives).
+                </p>
+
+                <h3>4. Money and Currency API</h3>
+
+                <p>
+                    After the new Date and Time API introduced in Java 8, Java 9 brings with it a new and official API
+                    for representing, transporting, and performing comprehensive calculations with Money and Currency.
+                    To find out more about the project, you can visit JavaMoney on Github. Code and usage examples are
+                    already available right here . Here are a few highlights:
+                </p>
+
+                <pre>Money amt1 = Money.of(10.1234556123456789, "USD"); // Money is a BigDecimal
+FastMoney amt2 = FastMoney.of(123456789, "USD"); // FastMoney is up to 5 decimal places
+Money total = amt1.add(amt2);</pre>
+
+                <p>
+                    The new money types: Money & FastMoney
+                </p>
+
+                <pre>MonetaryAmountFormat germanFormat = MonetaryFormats.getAmountFormat(Locale.GERMANY);
+System.out.println(germanFormat.format(monetaryAmount)); // 1.202,12 USD</pre>
+
+                <h3>5. Improve Contended Locking</h3>
+
+                <p>
+                    Lock contention is a performance bottleneck for many multithreaded Java applications. The
+                    enhancement proposal looks into improving the performance of Java object monitors as measured by
+                    different benchmarks. One of the these tests is Volano. It simulates a chat server with huge thread
+                    counts and client connections, many of them trying to access the same resources and simulate a heavy
+                    duty real world application.<br><br>
+                    These kind of stress tests push JVMs to the limit and try to determine the maximum throughput they
+                    can achieve, usually in terms of messages per second. The ambitious success metric for this JEP is a
+                    significant improvement over 22 different benchmarks. If the effort will succeed, these performance
+                    improvements will be rolling out in Java 9.
+                </p>
+
+                <h3>6. Segmented Code Cache</h3>
+
+                <p>
+                    Another performance improvement for Java 9 is coming from the JIT compiler angle. When certain areas
+                    of code are executed rapidly, the VM compiles them to native code and stores them in the code cache.
+                    This update looks into segmenting the code cache to different areas of compiled code in order to
+                    improve the compiler’s performance.<br><br>
+                    Instead of a single area, the code cache will be segmented into 3 by the code’s lifetime in the
+                    cache:
+                </p>
+
+                <ul>
+                    <li>Code that will stay in the cache forever (JVM internal / non-method code)</li>
+                    <li>Short lifetime (Profiled code, specific to a certain set of conditions)</li>
+                    <li>Potentially long lifetime (Non-profiled code)</li>
+                </ul>
+
+                <p>
+                    The segmentation would allow for several performance improvements to happen. For example, the method
+                    sweeper would be able to skip non-method code and act faster.
+                </p>
+
+                <h3>7. Smart Java Compilation, Phase Two</h3>
+
+                <p>
+                    The Smart Java Compilation tool, or sjavac, was first worked on around JEP 139 in order to improve
+                    JDK build speeds by having the javac compiler run on all cores. With JEP 199, it enters Phase Two,
+                    where it will be improved and generalized so that it can be used by default and build other projects
+                    than the JDK.
+                </p>
+
+                <h3>8. HTTP 2 Client</h3>
+
+                <p>
+                    HTTP 2.0 hasn’t been released yet as a standard but it will be submitted for final review soon and
+                    it’s expected to be finalized before the release of Java 9. JEP 110 will define and implement a new
+                    HTTP client for Java that will replace HttpURLConnection, and also implement HTTP 2.0 and
+                    websockets. It wasn’t published as an accepted JEP yet but its targeting Java 9 and we expect it to
+                    be included.<br><br>
+                    The official HTTP 2.0 RFC release date is currently set to February 2015, building on top of
+                    Google’s SPDY algorithm. SPDY has already shown great speed improvements over HTTP 1.1 ranging
+                    between 11.81% to 47.7% and its implementation already exists in most modern browsers.
+                </p>
+
+                <h3>9. Project Kulla – REPL in Java</h3>
+
+                <p>
+                    Recently announced, a bit unlikely to hit Java 9 but might make it on time with a targeted
+                    integration date set in April 2015. Today there’s no “native” Java way to REPL
+                    (Read-Eval-Print-Loop). Meaning, if you want to run a few lines of Java to check out them quickly on
+                    their own you will have to wrap it all in a separate project or method. There are REPL add-ons to
+                    popular IDEs and some other solutions like Java REPL, but no official way to do this so far –
+                    Project Kulla might be the answer.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

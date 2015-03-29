@@ -3,9 +3,8 @@
 <head lang="en">
     <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
     <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
-    <link href="../style/codeSnippets.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
-    <title>Operators</title>
+    <title>Placement</title>
 </head>
 <body>
 <div>
@@ -16,7 +15,7 @@
 
         <div id="Menu">
             <ul class="navigationBar">
-                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="../HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
                 <li><a href="">DIFFERENCES</a>
                     <ul>
                         <li><a href="#">DATA TYPES</a></li>
@@ -52,38 +51,40 @@
         <div id="content" class="contentDiv">
 
             <div class="articleDiv">
-                <h3>Operator Overloading in C#</h3>
+                <h3>Information technologies in Belarus</h3>
+
+                <img src="../img/dev_1.png">
 
                 <p>
-                    C# allows you to overload operators for use on your own classes. This makes it possible for a
-                    user-defined data type to look as natural and be as logical to use as a fundamental data type. For
-                    example, you might create a new data type called ComplexNumber to represent a complex number, and
-                    provide methods that perform mathematical operations on such numbers using the standard arithmetic
-                    operators, such as using the + operator to add two complex numbers.
-                    To overload an operator, you write a function that has the name operator followed by the symbol for
-                    the operator to be overloaded. For instance, this is how you would overload the + operator:<br><br>
-
-                    public static ComplexNumber operator+(ComplexNumber a, ComplexNumber b)<br><br>
-
-                    All operator overloads are static methods of the class. Also be aware that if you overload the
-                    equality (==) operator, you must overload the inequality operator (!=) as well. The < and >
-                    operators, and the <= and >= operators should also be overloaded in pairs.
-                    The full list of operators that can be overloaded is:
-                <ul>
-                    <li> Unary operators: +, -, !, ~, ++, --, true, false</li>
-                    <li> Binary operators: +, -, *, /, %, &, |, ^, <<, >>, ==, !=, >, <, >=, <=</li>
-                </ul>
-
-
+                    Curiously enough, among myriads of blogs and social services, which have appeared lately, there is not so much
+                    ones for people (programmers, Q&As and other ones who is connected with IT) who have built them. Such an imbalance
+                    has been mended and a project dev.by has been launched for belorussian IT people.<br><br>
+                    In IT it's not a secret that a main secret is a salary. It is so happened that to find an information about who and
+                    how much earns for nis or her programming work is hardly possible even among friends and office colleagues. So
+                    seeking to provide with an adequate assessment of the labor market in IT-industry, dev.by with the help of
+                    belorussian IT specialists collects and publishes information about about salaries considering speciality,
+                    employee experience and technologies he or she uses.
                 </p>
-            </div>
 
-            <div class="articleDiv">
-                <h3>Operator Overloading in Java</h3>
+                <h3>C#</h3>
+
+                <img src="../img/dev_2.JPG">
 
                 <p>
-                    Java doesn't have operator overloading. You have to work around.
+                    According to the site dev.by there is just 13 job vacancies in Belarus and among them only one proposal in Grodno.
+                    The only specified salary is 1500$.
                 </p>
+
+                <h3>Java</h3>
+
+                <img src="../img/dev_3.JPG">
+
+                <p>
+                    With Java development situation is significantly different. Proceeding from search result, Java developers have 49
+                    potential vacancies. In addition they can rely on salary from 1000$ to 3500$. In Grodno the amount of free vacancies
+                    is equal to 2.
+                </p>
+
             </div>
 
         </div>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Garbage collecton</title>
+</head>
+<body>
+<div>
+    <div id="header" class="headerDiv">
+        <h1>Sharp vs Java</h1>
+
+        <h2>it's such a review-comparison</h2>
+
+        <div id="Menu">
+            <ul class="navigationBar">
+                <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
+                <li><a href="">DIFFERENCES</a>
+                    <ul>
+                        <li><a href="#">DATA TYPES</a></li>
+                        <li><a href="#">OPERATORS</a>
+                        <li><a href="#">CODE STYLE</a>
+                        <li><a href="#">ACCESSORS</a>
+                        <li><a href="#">INTERFACES</a>
+                        <li><a href="#">ENUMS</a>
+                    </ul>
+                <li><a href="">SIMILARITIES</a>
+                    <ul>
+                        <li><a href="#">GARBAGE COLLECTING</a></li>
+                        <li><a href="#">GENERICS</a>
+                        <li><a href="#">PROPERTIES</a>
+                        <li><a href="#">EXCEPTIONS</a>
+                    </ul>
+                <li><a href="">MARKET</a>
+                    <ul>
+                        <li><a href="#">DESKTOP APPS</a></li>
+                        <li><a href="#">MOBILE APPS</a>
+                        <li><a href="#">SERVER APPS</a>
+                    </ul>
+                </li>
+                <li><a href="#">PROSPECTS</a></li>
+                <li><a href="#">UPCOMING CHANGES</a></li>
+                <li><a href="#">PLACEMENT</a></li>
+                <li><a href="#">ABOUT PROJECT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" class="containerDiv">
+
+        <div id="content" class="contentDiv">
+
+            <div class="articleDiv">
+                <h3>What is garbage collection</h3>
+
+                <p>
+                    In computer science, garbage collection (GC) is a form of automatic memory management. The garbage
+                    collector, or just collector, attempts to reclaim garbage, or memory occupied by objects that are no
+                    longer in use by the program. Garbage collection was invented by John McCarthy around 1959 to solve
+                    problems in Lisp.<br><br>
+                    Garbage collection is often portrayed as the opposite of manual memory management, which requires
+                    the programmer to specify which objects to deallocate and return to the memory system. However, many
+                    systems use a combination of approaches, including other techniques such as stack allocation and
+                    region inference. Like other memory management techniques, garbage collection may take a significant
+                    proportion of total processing time in a program and can thus have significant influence on
+                    performance.<br><br>
+                    Resources other than memory, such as network sockets, database handles, user interaction windows,
+                    and file and device descriptors, are not typically handled by garbage collection. Methods used to
+                    manage such resources, particularly destructors, may suffice to manage memory as well, leaving no
+                    need for GC. Some GC systems allow such other resources to be associated with a region of memory
+                    that, when collected, causes the other resource to be reclaimed; this is called finalization.
+                    Finalization may introduce complications limiting its usability, such as intolerable latency between
+                    disuse and reclaim of especially limited resources, or a lack of control over which thread performs
+                    the work of reclaiming.
+                </p>
+
+            </div>
+
+            <div class="articleDiv">
+                <h3>Principles of garbage collection</h3>
+
+                <p>
+                    The basic principles of garbage collection are:
+                <ul>
+                    <li>Find data objects in a program that cannot be accessed in the future.</li>
+                    <li>Reclaim the resources used by those objects.</li>
+                </ul>
+
+
+                Many programming languages require garbage collection, either as part of the language specification
+                (for example, Java, C#, D language, Go and most scripting languages) or effectively for practical
+                implementation (for example, formal languages like lambda calculus); these are said to be garbage
+                collected languages. Other languages were designed for use with manual memory management, but have
+                garbage collected implementations available (for example, C, C++). Some languages, like Ada,
+                Modula-3, and C++/CLI allow both garbage collection and manual memory management to co-exist in the
+                same application by using separate heaps for collected and manually managed objects; others, like D,
+                are garbage collected but allow the user to manually delete objects and also entirely disable
+                garbage collection when speed is required.<br><br>
+                While integrating garbage collection into the language's compiler and runtime system enables a much
+                wider choice of methods,[citation needed] post hoc GC systems exist, including some that do not
+                require recompilation. (Post-hoc GC is sometimes distinguished as litter collection.) The garbage
+                collector will almost always be closely integrated with the memory allocator.
+                </p>
+
+            </div>
+
+            <div class="articleDiv">
+                <h3>Advantages of garbage collection</h3>
+
+                <p>
+                    Garbage collection frees the programmer from manually dealing with memory deallocation. As a result,
+                    certain categories of bugs are eliminated or substantially reduced:
+                <ul>
+                    <li>Dangling pointer bugs, which occur when a piece of memory is freed while there are still
+                        pointers to it, and one of those pointers is dereferenced. By then the memory may have been
+                        reassigned to another use, with unpredictable results.
+                    </li>
+                    <li>Double free bugs, which occur when the program tries to free a region of memory that has already
+                        been freed, and perhaps already been allocated again.
+                    </li>
+                    <li>Certain kinds of memory leaks, in which a program fails to free memory occupied by objects that
+                        have become unreachable, which can lead to memory exhaustion. (Garbage collection typically does
+                        not deal with the unbounded accumulation of data that is reachable, but that will actually not
+                        be used by the program.)
+                    </li>
+                    <li>Efficient implementations of persistent data structures</li>
+                </ul>
+                Some of the bugs addressed by garbage collection can have security implications.
+                </p>
+
+            </div>
+
+            <div class="articleDiv">
+                <h3>Disadvantages of garbage collection</h3>
+
+                <p>
+                    Typically, garbage collection has certain disadvantages:
+                <ul>
+                    <li>Garbage collection consumes computing resources in deciding which memory to free, even though
+                        the programmer may have already known this information. The penalty for the convenience of not
+                        annotating object lifetime manually in the source code is overhead, which can lead to decreased
+                        or uneven performance. A peer reviewed paper came to the conclusion that GC needs five times the
+                        memory to compensate for this overhead and to perform as fast as explicit memory management.[4]
+                        Interaction with memory hierarchy effects can make this overhead intolerable in circumstances
+                        that are hard to predict or to detect in routine testing. The impact on performance was also
+                        given as reason by Apple for not adopting GC for iOS despit being the top wishlisted feature.
+                    </li>
+                    <li>The moment when the garbage is actually collected can be unpredictable, resulting in stalls
+                        scattered throughout a session. Unpredictable stalls can be unacceptable in real-time
+                        environments, in transaction processing, or in interactive programs. Incremental, concurrent,
+                        and real-time garbage collectors address these problems, with varying trade-offs.
+                    </li>
+                    <li>Non-deterministic GC is incompatible with RAII based management of non-GCed resources. As a
+                        result, the need for explicit manual resource management (release/close) for non-GCed resources
+                        becomes transitive to composition. That is: in a non-deterministic GC system, if a resource or a
+                        resource-like object requires manual resource management (release/close), and this object is
+                        used as 'part of' another object, then the composed object will also become a resource-like
+                        object that itself requires manual resource management (release/close).
+                    </li>
+                </ul>
+                </p>
+
+            </div>
+
+
+        </div>
+
+        <div id="lastAdded" class="lastAddedDiv">
+            <h3>Last added articles</h3>
+
+            <h3>
+                <a href="index.html" class="lastAddedTitle">Article title</a>
+            </h3>
+
+            <p>Short description Short description Short description Short description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description
+                Short description Short description Short description Short description Short description Short
+                description Short description </p>
+        </div>
+    </div>
+    <div id="footer" class="footerDiv">
+        <div class="footerTextLeft">Grodno, White Dew 45/11<br>+375 29 96 177 28<br>stakkato95@gmail.com</div>
+        <div class="footerTextCenter">© 2015 sharpvsjava.by</div>
+        <div class="footerTextRight">sharpvsjava.by - project describing primary, in the<br>opinion of the author,
+            differences between<br>Java and C# programming languages
+        </div>
+    </div>
+</div>
+</body>
+</html>

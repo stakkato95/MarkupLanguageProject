@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <link href="../style/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
     <link href="../style/menuStyle.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title>Enums</title>
 </head>
-<body style="margin: 0;">
+<body>
 <div>
     <div id="header" class="headerDiv">
         <h1>Sharp vs Java</h1>
@@ -51,282 +51,161 @@
         <div id="content" class="contentDiv">
 
             <div class="articleDiv">
-                <h3>Interfaces in C#</h3>
+                <h3>Short comparison of implementation</h3>
 
                 <p>
-                    An interface contains definitions for a group of related functionalities that a class or a struct
-                    can implement.
-                    By using interfaces, you can, for example, include behavior from multiple sources in a class. That
-                    capability is important in C# because the language doesn't support multiple inheritance of classes.
-                    In addition, you must use an interface if you want to simulate inheritance for structs, because they
-                    can't actually inherit from another struct or class.
-                    You define an interface by using the interface keyword, as the following example shows.
+                    Both languages define enumerations, but they are implemented in fundamentally different ways. As
+                    such, enumerations are one area where tools designed to automatically translate code between the two
+                    languages (such as Java to C# converters) fail.<br><br>
+                    C# has implemented enumerations in a manner similar to C, that is as wrappers around the bit-flags
+                    implemented in primitive integral types (int, byte, short, etc.). This has performance benefits and
+                    improves interaction with C/C++ compiled code, but provides fewer features and can lead to bugs if
+                    low-level value types are directly cast to an enumeration type, as is allowed in the C# language. In
+                    contrast, Java implements enumerations as full featured collection of instances, requiring more
+                    memory and not aiding interaction with C/C++ code, but providing additional features in reflection
+                    and intrinsic behavior. The implementation in each language is described in the table below.
 
-                    <pre>interface IEquatable&lt;T&gt;
-{
-    bool Equals(T obj);
-}
-</pre>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Java</th>
+                        <th>C#</th>
+                    </tr>
+                    <tr>
+                        <td>Definition</td>
+                        <td>In Java, the enumeration type is a class, and its values are objects (instances) of that
+                            class. The only valid values are the ones listed in the enumeration. The enumeration type
+                            may declare fields, allowing each individual enumerated value to reference additional data
+                            associated uniquely with that specific value. The enumeration type may also declare or
+                            override methods, or implement interfaces.
+                        </td>
+                        <td>Enumerations in C# are implicitly derived from the Enum type that again is a value type
+                            derivative. The value set of a C# enumeration is defined by the underlying type that can be
+                            a signed or unsigned integer type of 8, 16, 32 or 64 bits. The enumeration definition
+                            defines names for the selected integer values.[18][19] By default the first name is assigned
+                            the value 0 (zero) and the following names are assigned in increments of 1. Any value of the
+                            underlying primitive type is a valid value of the enumeration type, though an explicit cast
+                            may be needed to assign it.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Combining</td>
+                        <td>Java enumeration set and map collections provide functionality to combine multiple
+                            enumeration values to a combined value. These special collections allows compiler
+                            optimization to minimize the overhead incurred by using collections as the combination
+                            mechanism.
+                        </td>
+                        <td>C# supports bit-mapped enumerations where an actual value may be a combination of enumerated
+                            values bitwise or'ed together. The formatting and parsing methods implicitly defined by the
+                            type will attempt to use these values.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
 
-
-                Any class or struct that implements the IEquatable
-                &lt;T&gt; interface must contain a definition for an Equals method that matches the signature that the
-                interface specifies. As a result, you can count on a class that implements IEquatable
-                &lt;T&gt; to contain an Equals method with which an instance of the class can determine whether it's
-                equal to another instance of the same class.<br><br>
-                The definition of IEquatable &lt;T&gt; doesn’t provide an implementation for Equals. The interface
-                defines only the signature. In that way, an interface in C# is similar to an abstract class in which all
-                the methods are abstract. However, a class or struct can implement multiple interfaces, but a class can
-                inherit only a single class, abstract or not. Therefore, by using interfaces, you can include behavior
-                from multiple sources in a class.<br><br>
-                Interfaces can contain methods, properties, events, indexers, or any combination of those four member
-                types. For links to examples, see Related Sections. An interface can't contain constants, fields,
-                operators, instance constructors, destructors, or types. Interface members are automatically public, and
-                they can't include any access modifiers. Members also can't be static.<br><br>
-                To implement an interface member, the corresponding member of the implementing class must be public,
-                non-static, and have the same name and signature as the interface member.<br><br>
-                When a class or struct implements an interface, the class or struct must provide an implementation for
-                all of the members that the interface defines. The interface itself provides no functionality that a
-                class or struct can inherit in the way that it can inherit base class functionality. However, if a base
-                class implements an interface, any class that's derived from the base class inherits that
-                implementation.
-
-                An interface has the following properties:
-                <ul>
-                    <li>An interface is like an abstract base class. Any class or struct that implements the interface
-                        must implement all its members.
-                    </li>
-                    <li>An interface can't be instantiated directly. Its members are implemented by any class or struct
-                        that implements the interface.
-                    </li>
-                    <li>Interfaces can contain events, indexers, methods, and properties.</li>
-                    <li>Interfaces contain no implementation of methods.</li>
-                    <li>A class or struct can implement multiple interfaces. A class can inherit a base class and also
-                        implement one or more interfaces.
-                    </li>
-                </ul>
-
-                </p>
-
-                <h3>Explicit interface implementation in C#</h3>
-
-                <p>
-                    If a class implements two interfaces that contain a member with the same signature, then
-                    implementing that member on the class will cause both interfaces to use that member as their
-                    implementation. In the following example, all the calls to Paint invoke the same method.
-                    <pre>class Test
-{
-    static void Main()
-    {
-        SampleClass sc = new SampleClass();
-        IControl ctrl = (IControl)sc;
-        ISurface srfc = (ISurface)sc;
-
-        // The following lines all call the same method.
-        sc.Paint();
-        ctrl.Paint();
-        srfc.Paint();
-    }
-}
-
-
-interface IControl
-{
-    void Paint();
-}
-interface ISurface
-{
-    void Paint();
-}
-class SampleClass : IControl, ISurface
-{
-    // Both ISurface.Paint and IControl.Paint call this method.
-    public void Paint()
-    {
-        Console.WriteLine("Paint method in SampleClass");
-    }
-}
-
-// Output:
-// Paint method in SampleClass
-// Paint method in SampleClass
-// Paint method in SampleClass</pre>
-
-                If the two interface members do not perform the same function, however, this can lead to an incorrect
-                implementation of one or both of the interfaces. It is possible to implement an interface member
-                explicitly—creating a class member that is only called through the interface, and is specific to that
-                interface. This is accomplished by naming the class member with the name of the interface and a period.
-                For example:
-
-                <pre>public class SampleClass : IControl, ISurface
-{
-    void IControl.Paint()
-    {
-        System.Console.WriteLine("IControl.Paint");
-    }
-    void ISurface.Paint()
-    {
-        System.Console.WriteLine("ISurface.Paint");
-    }
-}</pre>
-
-                The class member IControl.Paint is only available through the IControl interface, and ISurface.Paint is
-                only available through ISurface. Both method implementations are separate, and neither is available
-                directly on the class. For example:
-
-                <pre>// Call the Paint methods from Main.
-
-SampleClass obj = new SampleClass();
-//obj.Paint();  // Compiler error.
-
-IControl c = (IControl)obj;
-c.Paint();  // Calls IControl.Paint on SampleClass.
-
-ISurface s = (ISurface)obj;
-s.Paint(); // Calls ISurface.Paint on SampleClass.
-
-// Output:
-// IControl.Paint
-// ISurface.Paint</pre>
-
-                Explicit implementation is also used to resolve cases where two interfaces each declare different
-                members of the same name such as a property and a method:
-
-                <pre>interface ILeft
-{
-    int P { get;}
-}
-interface IRight
-{
-    int P();
-}</pre>
-
-                To implement both interfaces, a class has to use explicit implementation either for the property P, or
-                the method P, or both, to avoid a compiler error. For example:
-
-                <pre>class Middle : ILeft, IRight
-{
-    public int P() { return 0; }
-    int ILeft.P { get { return 0; } }
-}</pre>
+                <br>In both C# and Java, programmers can use enumerations in a switch statement without conversion to a
+                string or primitive integer type. However, C# disallows fall-throughs unless the case statement does not
+                contain any code, as they are a main cause for hard-to-find bugs. Fall-throughs must be explicitly
+                declared using goto case
 
                 </p>
 
             </div>
 
             <div class="articleDiv">
-                <h3>Interfaces in Java</h3>
+                <h3>C# enums features</h3>
 
                 <p>
-                    An interface declaration consists of modifiers, the keyword interface, the interface name, a
-                    comma-separated list of parent interfaces (if any), and the interface body. For example:
-                <pre>public interface GroupedInterface extends Interface1, Interface2, Interface3 {
+                    The enum keyword is used to declare an enumeration, a distinct type that consists of a set of named
+                    constants called the enumerator list. Usually it is best to define an enum directly within a
+                    namespace so that all classes in the
+                    namespace can access it with equal convenience. However, an enum can also be nested within a class
+                    or struct.<br><br>
+                    By default, the first enumerator has the value 0, and the value of each successive enumerator is
+                    increased by 1. For example, in the following enumeration, Sat is 0, Sun is 1, Mon is 2, and so
+                    forth.
 
-    // constant declarations
+                <pre>enum Days {Sat, Sun, Mon, Tue, Wed, Thu, Fri};</pre>
 
-    // base of natural logarithms
-    double E = 2.718282;
+                Enumerators can use initializers to override the default values, as shown in the following example.
 
-    // method signatures
-    void doSomething (int i, double x);
-    int doSomethingElse(String s);
-}
-                </pre>
+                <pre>enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};</pre>
 
-                <p/>
+                In this enumeration, the sequence of elements is forced to start from 1 instead of 0. However, including
+                a constant that has the value of 0 is recommended.<br><br>
+                Every enumeration type has an underlying type, which can be any integral type except char. The default
+                underlying type of enumeration elements is int. To declare an enum of another integral type, such as
+                byte, use a colon after the identifier followed by the type, as shown in the following example.
 
-                <h3>Evolving interfaces in Java</h3>
+                <pre>enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};</pre>
 
-                <p>
-                    Consider an interface that you have developed called DoIt:
-                    <pre>public interface DoIt {
-   void doSomething(int i, double x);
-   int doSomethingElse(String s);
-}</pre>
-                Suppose that, at a later time, you want to add a third method to DoIt, so that the interface now
-                becomes:
-
-                <pre>public interface DoIt {
-
-   void doSomething(int i, double x);
-   int doSomethingElse(String s);
-   boolean didItWork(int i, double x, String s);
-
-}</pre>
-
-                If you make this change, then all classes that implement the old DoIt interface will break because they
-                no longer implement the old interface. Programmers relying on this interface will protest
-                loudly.<br><br>
-                Try to anticipate all uses for your interface and specify it completely from the beginning. If you want
-                to add additional methods to an interface, you have several options. You could create a DoItPlus
-                interface that extends DoIt:
-
-                <pre>public interface DoItPlus extends DoIt {
-
-   boolean didItWork(int i, double x, String s);
-
-}</pre>
-
-                Now users of your code can choose to continue to use the old interface or to upgrade to the new
-                interface.<br><br>
-                Alternatively, you can define your new methods as default methods. The following example defines a
-                default method named didItWork:
-
-                <pre>public interface DoIt {
-
-   void doSomething(int i, double x);
-   int doSomethingElse(String s);
-   default boolean didItWork(int i, double x, String s) {
-       // Method body
-   }
-
-}</pre>
-
-                Note that you must provide an implementation for default methods. You could also define new static
-                methods to existing interfaces. Users who have classes that implement interfaces enhanced with new
-                default or static methods do not have to modify or recompile them to accommodate the additional methods.
+                The approved types for an enum are byte, sbyte, short, ushort, int, uint, long, or ulong.
+                A variable of type Days can be assigned any value in the range of the underlying type; the values are
+                not limited to the named constants.
 
                 </p>
 
-                <h3>Default interface methods in Java</h3>
+            </div>
+
+            <div class="articleDiv">
+                <h3>Java enums features</h3>
 
                 <p>
-                    Default methods enable you to add new functionality to the interfaces of your libraries and ensure
-                    binary compatibility with code written for older versions of those interfaces.<br><br>
-                    Consider the following interface, TimeClient:
+                    Java programming language enum types are much more powerful than their counterparts in other
+                    languages. The enum declaration defines a class (called an enum type). The enum class body can
+                    include methods and other fields. The compiler automatically adds some special methods when it
+                    creates an enum. For example, they have a static values method that returns an array containing all
+                    of the values of the enum in the order they are declared.<br><br>
+                    In the following example, Planet is an enum type that represents the planets in the solar system.
+                    They are defined with constant mass and radius properties.<br><br>
+                    Each enum constant is declared with values for the mass and radius parameters. These values are
+                    passed to the constructor when the constant is created. Java requires that the constants be defined
+                    first, prior to any fields or methods. Also, when there are fields and methods, the list of enum
+                    constants must end with a semicolon.<br><br>
+                    In addition to its properties and constructor, Planet has methods that allow you to retrieve the
+                    surface gravity and weight of an object on each planet. Here is a sample program that takes your
+                    weight on earth (in any unit) and calculates and prints your weight on all of the planets (in the
+                    same unit):
 
-                    <pre>public interface TimeClient {
-    void setTime(int hour, int minute, int second);
-    void setDate(int day, int month, int year);
-    void setDateAndTime(int day, int month, int year,
-                               int hour, int minute, int second);
-    LocalDateTime getLocalDateTime();
-}</pre>
+                <pre>public enum Planet {
+    MERCURY (3.303e+23, 2.4397e6),
+    VENUS   (4.869e+24, 6.0518e6),
+    EARTH   (5.976e+24, 6.37814e6),
+    MARS    (6.421e+23, 3.3972e6),
+    JUPITER (1.9e+27,   7.1492e7),
+    SATURN  (5.688e+26, 6.0268e7),
+    URANUS  (8.686e+25, 2.5559e7),
+    NEPTUNE (1.024e+26, 2.4746e7);
 
-                Suppose that you want to add new functionality to the TimeClient interface, such as the ability to
-                specify a time zone through a ZonedDateTime object (which is like a LocalDateTime object except that it
-                stores time zone information):
+    private final double mass;   // in kilograms
+    private final double radius; // in meters
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+    }
+    private double mass() { return mass; }
+    private double radius() { return radius; }
 
-                <pre>public interface TimeClient {
-    void setTime(int hour, int minute, int second);
-    void setDate(int day, int month, int year);
-    void setDateAndTime(int day, int month, int year,
-        int hour, int minute, int second);
-    LocalDateTime getLocalDateTime();
-    ZonedDateTime getZonedDateTime(String zoneString);
-}</pre>
+    // universal gravitational constant  (m3 kg-1 s-2)
+    public static final double G = 6.67300E-11;
 
-                Following this modification to the TimeClient interface, you would also have to modify the class
-                SimpleTimeClient and implement the method getZonedDateTime. However, rather than leaving
-                getZonedDateTime as abstract (as in the previous example), you can instead define a default
-                implementation. (Remember that an abstract method is a method declared without an implementation.)
-
-                <pre>public class TestSimpleTimeClient {
-    public static void main(String... args) {
-        TimeClient myTimeClient = new SimpleTimeClient();
-        System.out.println("Current time: " + myTimeClient.toString());
-        System.out.println("Time in California: " +
-            myTimeClient.getZonedDateTime("Blah blah").toString());
+    double surfaceGravity() {
+        return G * mass / (radius * radius);
+    }
+    double surfaceWeight(double otherMass) {
+        return otherMass * surfaceGravity();
+    }
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: java Planet &lt;earth_weight&gt;");
+                    System.exit(-1);
+        }
+        double earthWeight = Double.parseDouble(args[0]);
+        double mass = earthWeight/EARTH.surfaceGravity();
+        for (Planet p : Planet.values())
+            System.out.printf("Your weight on %s is %f%n",
+                    p, p.surfaceWeight(mass));
     }
 }</pre>
 
