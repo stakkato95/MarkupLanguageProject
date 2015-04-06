@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 
+<!DOCTYPE menu SYSTEM "Document Type Definition.dtd">
 <menu>
     <level_1 href="HistoryOfLanguages" title="HISTORY OF LANGUAGES"/>
     <level_1 href="Differences" title="DIFFERENCES">

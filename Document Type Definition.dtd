@@ -1,0 +1,7 @@
+<!DOCTYPE menu [
+        <!ELEMENT menu (level_1*)>
+        <!ELEMENT level_1 (level_2*)>
+        <!ATTLIST level_1 href CDATA #REQUIRED title CDATA #REQUIRED>
+        <!ELEMENT level_2 EMPTY>
+        <!ATTLIST level_2 href CDATA #REQUIRED title CDATA #REQUIRED>
+        ]>
