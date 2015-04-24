@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<table>
+    <row>
+        <headCell>Short Name</headCell>
+        <headCell>.NET Class</headCell>
+        <headCell>Type</headCell>
+        <headCell>Width</headCell>
+        <headCell>Range (bits)</headCell>
+    </row>
+    <row>
+        <name>byte</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.byte(v=vs.90).aspx" class="articleTitle">Byte</class>
+        <type>Unsigned integer</type>
+        <width>8</width>
+        <range>0 to 255</range>
+    </row>
+    <row>
+        <name>sbyte</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.sbyte(v=vs.90).aspx" class="articleTitle">SByte</class>
+        <type>Signed integer</type>
+        <width>8</width>
+        <range>-128 to 127</range>
+    </row>
+    <row>
+        <name>int</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.int32(v=vs.90).aspx" class="articleTitle">Int32</class>
+        <type>Signed integer</type>
+        <width>32</width>
+        <range>-2,147,483,648 to 2,147,483,647</range>
+    </row>
+    <row>
+        <name>uint</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.uint32(v=vs.90).aspx" class="articleTitle">UInt32</class>
+        <type>Unsigned integer</type>
+        <width>32</width>
+        <range>0 to 4294967295</range>
+    </row>
+    <row>
+        <name>short</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.int16(v=vs.90).aspx" class="articleTitle">Int16</class>
+        <type>Signed integer</type>
+        <width>16</width>
+        <range>-32,768 to 32,767</range>
+    </row>
+    <row>
+        <name>ushort</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.uint16(v=vs.90).aspx" class="articleTitle">UInt16</class>
+        <type>Unsigned integer</type>
+        <width>16</width>
+        <range>0 to 65535</range>
+    </row>
+    <row>
+        <name>long</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.int64(v=vs.90).aspx" class="articleTitle">Int64</class>
+        <type>Signed integer</type>
+        <width>64</width>
+        <range>-9223372036854775808 to 9223372036854775807</range>
+    </row>
+    <row>
+        <name>ulong</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.uint64(v=vs.90).aspx" class="articleTitle">UInt64</class>
+        <type>Unsigned integer</type>
+        <width>64</width>
+        <range>0 to 18446744073709551615</range>
+    </row>
+    <row>
+        <name>float</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.single(v=vs.90).aspx" class="articleTitle">Single</class>
+        <type>Single-precision floating point type</type>
+        <width>32</width>
+        <range>-3.402823e38 to 3.402823e38</range>
+    </row>
+    <row>
+        <name>double</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.double(v=vs.90).aspx" class="articleTitle">Double</class>
+        <type>Double-precision floating point type</type>
+        <width>64</width>
+        <range>-1.79769313486232e308 to 1.79769313486232e308</range>
+    </row>
+    <row>
+        <name>char</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.char(v=vs.90).aspx" class="articleTitle">Char</class>
+        <type>A single Unicode character</type>
+        <width>16</width>
+        <range>Unicode symbols used in text</range>
+    </row>
+    <row>
+        <name>bool</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.boolean(v=vs.90).aspx" class="articleTitle">Boolean</class>
+        <type>Logical Boolean type</type>
+        <width>8</width>
+        <range>True or false</range>
+    </row>
+    <row>
+        <name>object</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.object(v=vs.90).aspx" class="articleTitle">Object</class>
+        <type>Base type of all other types</type>
+        <width>16</width>
+        <range>Unicode symbols used in text</range>
+    </row>
+    <row>
+        <name>string</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.90).aspx" class="articleTitle">String</class>
+        <type>A sequence of characters</type>
+        <width>16</width>
+        <ra4>Unicode symbols used in text</ra4>
+    </row>
+    <row>
+        <name>decimal</name>
+        <class href="https://msdn.microsoft.com/en-us/library/system.decimal(v=vs.90).aspx" class="articleTitle">Decimal</class>
+        <type>Precise fractional or integral type that can represent decimal numbers with 29 significant digits</type>
+        <width>128</width>
+        <range>±1.0 × 10e−28 to ±7.9 × 10e28</range>
+    </row>
+</table>
