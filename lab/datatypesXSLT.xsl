@@ -3,6 +3,9 @@
 
     <xsl:template match="/">
         <html>
+            <head lang="en">
+                <link href="../style/baseStyles.css" rel="stylesheet" type="text/css"/>
+            </head>
             <body>
                 <table border="1">
                     <tr>
