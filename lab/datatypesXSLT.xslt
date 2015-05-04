@@ -19,15 +19,6 @@
                     <xsl:for-each select="table/row[position()>1]">
                         <xsl:sort select="name"/>
                         <tr>
-                            <!--USE WITHOUT CODE BELOW-->
-                            <!--<xsl:if test="class[contains(@href,'byte')]">-->
-                                <!--<td><xsl:value-of select="name"/></td>-->
-                                <!--<td><xsl:value-of select="class"/></td>-->
-                                <!--<td><xsl:value-of select="type"/></td>-->
-                                <!--<td><xsl:value-of select="width"/></td>-->
-                                <!--<td><xsl:value-of select="range"/></td>-->
-                            <!--</xsl:if>-->
-
                             <td><xsl:number value="position()"/></td>
                             <td><xsl:value-of select="name"/></td>
                             <xsl:choose>
