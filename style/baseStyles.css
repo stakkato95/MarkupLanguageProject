@@ -156,3 +156,8 @@ caption {
 .lookThroughText:hover {
     background-color: #f9d401;
 }
+
+.iframe {
+    height: 550px;
+    width: 1000px;
+}
