@@ -2,22 +2,18 @@
  * Created by Artyom on 11.05.2015.
  */
 function loadXMLDoc(documentName) {
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    } else {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.open("GET",documentName,false);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", documentName, false);
     xhttp.send("");
     return xhttp.responseXML;
 }
 
 function loadDatatypes() {
     var xml = loadXMLDoc("../lab/datatypesProject.xml");
-    var xsl = loadXMLDoc("../lab/datatypesProject.xslt");
+    var xsl = loadXMLDoc("../lab/datatypesProject.xsl");
+    xsltProcessor = new XSLTProcessor();
+    xsltProcessor.importStylesheet(xsl);
+    resultDocument = xsltProcessor.transformToFragment(xml, document);
 
-    processor = new XSLTProcessor();
-    processor.importStylesheet(xsl);
-
-    document.getElementById('typesFrame').innerHTML = xml.responseText;
+    document.getElementById('typesFrame').appendChild(resultDocument);
 }
