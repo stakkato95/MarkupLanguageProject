@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../lab/datatypesProject.xsl"?>
 
+
 <table>
     <row>
         <headCell>Short Name</headCell>
@@ -105,7 +106,7 @@
         <class href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.90).aspx" class="articleTitle">String</class>
         <type>A sequence of characters</type>
         <width>16</width>
-        <ra4>Unicode symbols used in text</ra4>
+        <range>Unicode symbols used in text</range>
     </row>
     <row>
         <name>decimal</name>
