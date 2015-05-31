@@ -10,40 +10,38 @@
 <body style="margin: 0;">
 <div>
     <div id="header" class="headerDiv">
-        <h1>Sharp vs Java</h1>
+        <h1><a href="index.html" class="h1Text">Sharp vs Java</a></h1>
 
         <h2>it's such a review-comparison</h2>
 
         <div id="Menu">
             <ul class="navigationBar">
                 <li><a href="HistoryOfLanguages/historyOfLanguages.html">HISTORY OF LANGUAGES</a></li>
-                <li><a href="">DIFFERENCES</a>
+                <li><a>DIFFERENCES</a>
                     <ul>
-                        <li><a href="#">DATA TYPES</a></li>
-                        <li><a href="#">OPERATORS</a>
-                        <li><a href="#">CODE STYLE</a>
-                        <li><a href="#">ACCESSORS</a>
-                        <li><a href="#">INTERFACES</a>
-                        <li><a href="#">ENUMS</a>
+                        <li><a href="Differences/dataTypes.html">DATA TYPES</a></li>
+                        <li><a href="Differences/operators.html">OPERATORS</a>
+                        <li><a href="Differences/codeStyle.html">CODE STYLE</a>
+                        <li><a href="Differences/accessModifiers.html">ACCESSORS</a>
+                        <li><a href="Differences/interfaces.html">INTERFACES</a>
+                        <li><a href="Differences/enums.html">ENUMS</a>
+                        <li><a href="Differences/generics.html">GENERICS</a>
+                        <li><a href="Differences/properties.html">PROPERTIES</a>
+                        <li><a href="Differences/exceptions.html">EXCEPTIONS</a>
                     </ul>
-                <li><a href="">SIMILARITIES</a>
+                <li><a>SIMILARITIES</a>
                     <ul>
-                        <li><a href="#">GARBAGE COLLECTING</a></li>
-                        <li><a href="#">GENERICS</a>
-                        <li><a href="#">PROPERTIES</a>
-                        <li><a href="#">EXCEPTIONS</a>
+                        <li><a href="Similarities/garbageCollection.html">GARBAGE COLLECTING</a></li>
                     </ul>
-                <li><a href="">MARKET</a>
+                <li><a>MARKET</a>
                     <ul>
-                        <li><a href="#">DESKTOP APPS</a></li>
-                        <li><a href="#">MOBILE APPS</a>
-                        <li><a href="#">SERVER APPS</a>
+                        <li><a href="Market/desktop.html">DESKTOP APPS</a></li>
+                        <li><a href="Market/mobile.html">MOBILE APPS</a>
+                        <li><a href="Market/server.html">SERVER APPS</a>
                     </ul>
                 </li>
-                <li><a href="#">PROSPECTS</a></li>
-                <li><a href="#">UPCOMING CHANGES</a></li>
-                <li><a href="#">PLACEMENT</a></li>
-                <li><a href="#">ABOUT PROJECT</a></li>
+                <li><a href="UpcomingChanges/upcomingChanges.html">UPCOMING CHANGES</a></li>
+                <li><a href="Placement/placement.html">PLACEMENT</a></li>
             </ul>
         </div>
     </div>
@@ -53,72 +51,74 @@
 
             <div class="articleDiv">
                 <h3>
-                    <a href="index.html" class="articleTitle">Article aaaaaaaaaa</a>
+                    <a href="../MarkupLanguageProject/Differences/dataTypes.html" class="articleTitle">Data types</a>
                 </h3>
 
-                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
+                <p>
+                    The actual range of primitive data types that is available is dependent upon the specific
+                    programming language that is being used. For example, in C, strings are a composite but built-in
+                    data type, whereas in modern dialects of BASIC and in JavaScript, they are assimilated to a
+                    primitive data type that is both basic and built-in.<br>
+                    Classic basic primitive types may include:
+                <ul>
+                    <li>Character</li>
+                    <li>Integer</li>
+                    <li>Floating-point number</li>
+                    <li>Fixed-point number</li>
+                    <li>Boolean</li>
+                    <li>Reference (also called a pointer or handle), a small value referring to another object's address
+                        in
+                        memory, possibly a much larger one.
+                    </li>
+                </ul>
                 </p>
-                <a href="index.html" class="lookThroughText">
+                <a href="../MarkupLanguageProject/Differences/dataTypes.html" class="lookThroughText">
                     <span>Look Through</span>
                 </a>
             </div>
 
             <div class="articleDiv">
                 <h3>
-                    <a href="index.html" class="articleTitle">Article aaaaaaaaaa</a>
+                    <a href="../MarkupLanguageProject/Differences/enums.html" class="articleTitle">Enums</a>
                 </h3>
 
-                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
+                <p>Both languages define enumerations, but they are implemented in fundamentally different ways. As
+                    such, enumerations are one area where tools designed to automatically translate code between the two
+                    languages (such as Java to C# converters) fail.<br><br>
+                    C# has implemented enumerations in a manner similar to C, that is as wrappers around the bit-flags
+                    implemented in primitive integral types (int, byte, short, etc.). This has performance benefits and
+                    improves interaction with C/C++ compiled code, but provides fewer features and can lead to bugs if
+                    low-level value types are directly cast to an enumeration type, as is allowed in the C# language. In
+                    contrast, Java implements enumerations as full featured collection of instances, requiring more
+                    memory and not aiding interaction with C/C++ code, but providing additional features in reflection
+                    and intrinsic behavior. The implementation in each language is described in the table below.
                 </p>
-                <a href="index.html" class="lookThroughText">
+                <a href="../MarkupLanguageProject/Differences/enums.html" class="lookThroughText">
                     <span>Look Through</span>
                 </a>
             </div>
 
             <div class="articleDiv">
                 <h3>
-                    <a href="index.html" class="articleTitle">Article title</a>
+                    <a href="../MarkupLanguageProject/HistoryOfLanguages/historyOfLanguages.html" class="articleTitle">History of languages</a>
                 </h3>
 
-                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text
-                    Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
-                    Text Text Text Text
+                <p>During the development of the .NET Framework, the class libraries were originally written using a
+                    managed code compiler system called Simple Managed C (SMC). In January 1999, Anders Hejlsberg formed
+                    a team to build a new language at the time called Cool, which stood for "C-like Object Oriented
+                    Language". Microsoft had considered keeping the name "Cool" as the final name of the language, but
+                    chose not to do so for trademark reasons. By the time the .NET project was publicly announced at the
+                    July 2000 Professional Developers Conference, the language had been renamed C#, and the class
+                    libraries and ASP.NET runtime had been ported to C#.<br/><br/>
+
+                    C#'s principal designer and lead architect at Microsoft is Anders Hejlsberg, who was previously
+                    involved with the design of Turbo Pascal, Embarcadero Delphi (formerly CodeGear Delphi, Inprise
+                    Delphi and Borland Delphi), and Visual J++. In interviews and technical papers he has stated that
+                    flaws in most major programming languages (e.g. C++, Java, Delphi, and Smalltalk) drove the
+                    fundamentals of the Common Language Runtime (CLR), which, in turn, drove the design of the C#
+                    language itself.
                 </p>
-                <a href="index.html" class="lookThroughText">
+                <a href="../MarkupLanguageProject/HistoryOfLanguages/historyOfLanguages.html" class="lookThroughText">
                     <span >Look Through</span>
                 </a>
             </div>
@@ -129,14 +129,20 @@
             <h3>Last added articles</h3>
 
             <h3>
-                <a href="index.html" class="lastAddedTitle">Article title</a>
+                <a href="Similarities/garbageCollection.html" class="lastAddedTitle">Garbage collecton</a>
             </h3>
 
-            <p>Short description Short description Short description Short description Short description
-                Short description Short description Short description Short description Short description Short
-                description Short description
-                Short description Short description Short description Short description Short description Short
-                description Short description </p>
+            <p>In computer science, garbage collection (GC) is a form of automatic memory management. The garbage
+                collector, or just collector, attempts to reclaim garbage, or memory occupied by objects that are no
+                longer in use by the program. Garbage collection was invented by John McCarthy around 1959 to solve
+                problems in Lisp.<br><br>
+                Garbage collection is often portrayed as the opposite of manual memory management, which requires
+                the programmer to specify which objects to deallocate and return to the memory system. However, many
+                systems use a combination of approaches, including other techniques such as stack allocation and
+                region inference. Like other memory management techniques, garbage collection may take a significant
+                proportion of total processing time in a program and can thus have significant influence on
+                performance.
+            </p>
         </div>
     </div>
 
