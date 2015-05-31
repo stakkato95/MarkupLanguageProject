@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="menuXSLT.xsl"?>
+
+<menu>
+    <level_1>
+        <title>HISTORY OF LANGUAGES</title>
+        <href>HistoryOfLanguages</href>
+    </level_1>
+    <level_1>
+        <title>DIFFERENCES</title>
+        <href>Differences</href>
+        <level_2>
+            <title>DATA TYPES</title>
+            <href>DataTypes</href>
+        </level_2>
+        <level_2>
+            <title>OPERATORS</title>
+            <href>Operators</href>
+        </level_2>
+        <level_2>
+            <title>CODE STYLE</title>
+            <href>CodeStyle</href>
+        </level_2>
+        <level_2>
+            <title>ACCESSORS</title>
+            <href>Access modifiers</href>
+        </level_2>
+        <level_2>
+            <title>PROPERTIES</title>
+            <href>Properties</href>
+        </level_2>
+        <level_2>
+            <title>INTERFACES</title>
+            <href>Interfaces</href>
+        </level_2>
+        <level_2>
+            <title>ENUMS</title>
+            <href>Enums</href>
+        </level_2>
+        <level_2>
+            <title>GENERICS</title>
+            <href>Generics</href>
+        </level_2>
+        <level_2>
+            <title>EXCEPTIONS</title>
+            <href>Exceptions</href>
+        </level_2>
+    </level_1>
+    <level_1>
+        <title>SIMILARITIES</title>
+        <href>Similarities</href>
+        <level_2>
+            <title>ARBAGE COLLECTING</title>
+            <href>GarbageCollecting</href>
+        </level_2>
+    </level_1>
+    <level_1>
+        <title>MARKET</title>
+        <href>Market</href>
+        <level_2>
+            <title>DESKTOP APPS</title>
+            <href>DesktopApps</href>
+        </level_2>
+        <level_2>
+            <title>MOBILE APPS</title>
+            <href>MobileApps</href>
+        </level_2>
+        <level_2>
+            <title>SERVER APPS</title>
+            <href>ServerApps</href>
+        </level_2>
+        <level_2>
+            <title>EXCEPTIONS</title>
+            <href>Exceptions</href>
+        </level_2>
+    </level_1>
+    <level_1>
+        <title>PROSPECTS</title>
+        <href>Prospects</href>
+    </level_1>
+    <level_1>
+        <title>UPCOMING CHANGES</title>
+        <href>UpcomingChanges</href>
+    </level_1>
+    <level_1>
+        <title>PLACEMENT</title>
+        <href>Placement</href>
+    </level_1>
+    <level_1>
+        <title>ABOUT PROJECT</title>
+        <href>AboutProject</href>
+    </level_1>
+</menu>

@@ -39,6 +39,7 @@
                 <h3><xsl:value-of select="sum(//width)"/></h3>
                 <h3>Arithmetic mean of Width column</h3>
                 <h3><xsl:value-of select="sum(//width) div count(//width)"/></h3>
+                <a><xsl:value-of select="sum(//width) div count(//width)"/></a>
             </body>
         </html>
     </xsl:template>

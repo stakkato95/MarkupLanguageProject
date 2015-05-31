@@ -24,28 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="datatypesProject.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lab/datatypesProject.js">
+      <file leaf-file-name="accessModifiers.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lab/embededXmlMenu/accessModifiers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28895184" vertical-offset="0" max-vertical-offset="884">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc;n#loadXMLDoc#0" expanded="false" />
-                <element signature="n#!!block;n#loadXMLDoc#0" expanded="false" />
-                <element signature="e#111#206#0" expanded="false" />
-                <element signature="e#216#301#0" expanded="false" />
-                <element signature="n#!!block;n#loadDatatypes1#0" expanded="false" />
-                <element signature="e#1066#1728#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataTypesIframe.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lab/dataTypesIframe.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5384617" vertical-offset="1437" max-vertical-offset="3434">
-              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23407917" vertical-offset="0" max-vertical-offset="5100">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -56,9 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HistoryOfLanguages/HistoryOfLanguages.html" />
-        <option value="$PROJECT_DIR$/trololo.html" />
-        <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/historyOfLanguagesStyle.css" />
         <option value="$PROJECT_DIR$/style/menuStyle.css" />
         <option value="$PROJECT_DIR$/style/codeStyle.css" />
@@ -88,7 +68,6 @@
         <option value="$PROJECT_DIR$/lab/XMLPage.xml" />
         <option value="$PROJECT_DIR$/lab/XSLTPage.xsl" />
         <option value="$PROJECT_DIR$/lab/datatypesXSLT.xsl" />
-        <option value="$PROJECT_DIR$/lab/datatypesXSLT.xslt" />
         <option value="$PROJECT_DIR$/lab/datatypes.xml" />
         <option value="$PROJECT_DIR$/lab/datatypesPage.xml" />
         <option value="$PROJECT_DIR$/lab/datatypesForProject.xslt" />
@@ -106,6 +85,11 @@
         <option value="$PROJECT_DIR$/lab/forms/registrationPage.html" />
         <option value="$PROJECT_DIR$/lab/datatypesProject.xml" />
         <option value="$PROJECT_DIR$/lab/dataTypesIframe.html" />
+        <option value="$PROJECT_DIR$/lab/embededXmlMenu/datatypesProject.js" />
+        <option value="$PROJECT_DIR$/lab/embededXmlMenu/xmlMenu.xml" />
+        <option value="$PROJECT_DIR$/lab/datatypesXSLT.xslt" />
+        <option value="$PROJECT_DIR$/lab/embededXmlMenu/menuXSLT.xsl" />
+        <option value="$PROJECT_DIR$/lab/embededXmlMenu/accessModifiers.html" />
       </list>
     </option>
   </component>
@@ -169,6 +153,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarkupLanguageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lab" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -201,6 +199,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="embededXmlMenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarkupLanguageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Differences" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -218,12 +234,13 @@
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ЯРД/Site" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Education\2 курс\4 семестр\Языки разметка документов\MarkupLanguageProject\lab\embededXmlMenu" />
       <recent name="D:\Education\2 курс\4 семестр\Языки разметка документов\MarkupLanguageProject\lab" />
       <recent name="D:\Education\2 курс\4 семестр\Языки разметка документов\MarkupLanguageProject\Similarities" />
       <recent name="D:\Education\2 курс\4 семестр\Языки разметка документов\MarkupLanguageProject\Differences" />
@@ -260,10 +277,14 @@
       <ConfigurationWrapper RunnerId="debuggableProgram" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -273,11 +294,10 @@
       <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
@@ -294,9 +314,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
@@ -351,21 +368,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -417,13 +434,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/baseStyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="1615">
@@ -550,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Differences/properties.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23407917" vertical-offset="0" max-vertical-offset="1003">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HistoryOfLanguages/historyOfLanguages.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17900172" vertical-offset="32" max-vertical-offset="3196">
@@ -589,13 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2074">
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Differences/accessModifiers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11703958" vertical-offset="0" max-vertical-offset="4403">
-          <caret line="4" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="324" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -635,22 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/datatypesXSLT.xslt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07578254" vertical-offset="243" max-vertical-offset="850">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lab/XSLTPage.xslt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.430595" vertical-offset="0" max-vertical-offset="3995">
-          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lab/datatypesXSD.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
@@ -666,28 +646,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/xmlMenu.xml">
+    <entry file="file://$PROJECT_DIR$/Differences/dataTypes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52974504" vertical-offset="0" max-vertical-offset="425">
-          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.23943663" vertical-offset="0" max-vertical-offset="5661">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5568369" vertical-offset="16373" max-vertical-offset="81617">
+          <caret line="983" column="6" selection-start-line="983" selection-start-column="0" selection-end-line="984" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/dataTypesIframe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27710843" vertical-offset="1437" max-vertical-offset="3434">
+          <caret line="94" column="95" selection-start-line="94" selection-start-column="95" selection-end-line="94" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/dataTypesXhr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82042253" vertical-offset="1455" max-vertical-offset="3944">
+          <caret line="113" column="52" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/baseStyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53212523" vertical-offset="0" max-vertical-offset="1122">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <element signature="n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="e#5#23#0" expanded="false" />
+            <element signature="e#28#185#0" expanded="false" />
+            <element signature="e#190#326#0" expanded="false" />
+            <element signature="e#331#356#0" expanded="false" />
+            <element signature="e#363#386#0" expanded="false" />
+            <element signature="e#390#418#0" expanded="false" />
+            <element signature="e#433#482#0" expanded="false" />
+            <element signature="e#497#568#0" expanded="false" />
+            <element signature="e#669#690#0" expanded="false" />
+            <element signature="e#717#751#0" expanded="false" />
+            <element signature="e#761#787#0" expanded="false" />
+            <element signature="e#801#923#0" expanded="false" />
+            <element signature="e#939#960#0" expanded="false" />
+            <element signature="e#974#1054#0" expanded="false" />
+            <element signature="e#1068#1091#0" expanded="false" />
+            <element signature="e#1107#1280#0" expanded="false" />
+            <element signature="e#1293#1443#0" expanded="false" />
+            <element signature="e#1461#1501#0" expanded="false" />
+            <element signature="e#1521#1583#0" expanded="false" />
+            <element signature="e#1602#1666#0" expanded="false" />
+            <element signature="e#1682#1732#0" expanded="false" />
+            <element signature="e#1754#1777#0" expanded="false" />
+            <element signature="e#1795#1845#0" expanded="false" />
+            <element signature="e#1869#1924#0" expanded="false" />
+            <element signature="e#1943#2071#0" expanded="false" />
+            <element signature="e#2096#2130#0" expanded="false" />
+            <element signature="e#2140#2181#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/datatypesProject.xsl">
+    <entry file="file://$PROJECT_DIR$/lab/forms/crossPageSending.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4220963" vertical-offset="208" max-vertical-offset="629">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding />
+        <state vertical-scroll-proportion="0.17171717" vertical-offset="0" max-vertical-offset="594">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc;n#loadInfo#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lab/datatypes.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048158642" vertical-offset="0" max-vertical-offset="442">
-          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="52" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="116" selection-end-column="8" />
           <folding>
             <element signature="n#row#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#row#1;n#table#0;n#!!top" expanded="false" />
@@ -709,104 +749,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/XmlHttpRequest/Core.html">
+    <entry file="file://$PROJECT_DIR$/lab/datatypesProject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.307693" vertical-offset="1951" max-vertical-offset="4726">
-          <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/baseStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4925865" vertical-offset="1877" max-vertical-offset="2856">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Differences/dataTypes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23943663" vertical-offset="0" max-vertical-offset="5661">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5568369" vertical-offset="16373" max-vertical-offset="81617">
-          <caret line="983" column="6" selection-start-line="983" selection-start-column="0" selection-end-line="984" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/validation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23580034" vertical-offset="883" max-vertical-offset="3349">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lab/forms/crossPageSending.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3" vertical-offset="0" max-vertical-offset="340">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.2800659" vertical-offset="0" max-vertical-offset="607">
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
           <folding>
-            <element signature="n#!!doc;n#loadInfo#0" expanded="false" />
+            <element signature="n#!!doc;n#loadXMLDoc#0" expanded="false" />
+            <element signature="n#!!block;n#loadXMLDoc#0" expanded="false" />
+            <element signature="e#111#206#0" expanded="false" />
+            <element signature="e#216#301#0" expanded="false" />
+            <element signature="n#!!block;n#loadDatatypes1#0" expanded="false" />
+            <element signature="e#1066#1728#0" expanded="false" />
+            <element signature="n#!!block;n#loadDatatypesX#0" expanded="false" />
+            <element signature="e#1824#1919#0" expanded="false" />
+            <element signature="e#1929#2014#0" expanded="false" />
+            <element signature="e#2404#3055#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/forms/infoPage.html">
+    <entry file="file://$PROJECT_DIR$/lab/xmlMenu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88379204" vertical-offset="0" max-vertical-offset="442">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/validation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64684016" vertical-offset="132" max-vertical-offset="697">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.30807248" vertical-offset="0" max-vertical-offset="607">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
           <folding>
-            <element signature="e#708#830#0" expanded="false" />
-            <element signature="n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#1;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#2;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#3;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#4;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#td#1;n#tr#4;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#5;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#td#1;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#select#1;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#select#2;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#6;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#tr#7;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#td#1;n#tr#7;n#tbody#0;n#table#0;n#form#0;n#fieldset#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#1;n#menu#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/forms/registrationPage.html">
+    <entry file="file://$PROJECT_DIR$/lab/XSLTPage.xslt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22203098" vertical-offset="92" max-vertical-offset="4760">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.66392094" vertical-offset="1654" max-vertical-offset="3995">
+          <caret line="121" column="41" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lab/datatypesProject.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72817135" vertical-offset="170" max-vertical-offset="867">
-          <caret line="108" column="50" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.028006589" vertical-offset="0" max-vertical-offset="867">
+          <caret line="1" column="69" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="69" />
           <folding>
             <element signature="n#row#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#row#1;n#table#0;n#!!top" expanded="false" />
@@ -824,34 +807,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/dataTypesXhr.html">
+    <entry file="file://$PROJECT_DIR$/Differences/properties.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7834507" vertical-offset="1442" max-vertical-offset="3944">
-          <caret line="111" column="51" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.23407917" vertical-offset="0" max-vertical-offset="2635">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/dataTypesIframe.html">
+    <entry file="file://$PROJECT_DIR$/lab/datatypesProject.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5384617" vertical-offset="1437" max-vertical-offset="3434">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8121911" vertical-offset="0" max-vertical-offset="629">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/datatypesProject.js">
+    <entry file="file://$PROJECT_DIR$/lab/datatypesXSLT.xslt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28895184" vertical-offset="0" max-vertical-offset="884">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7479407" vertical-offset="243" max-vertical-offset="867">
+          <caret line="41" column="72" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/embededXmlMenu/menuScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2800659" vertical-offset="0" max-vertical-offset="607">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc;n#loadXMLDoc#0" expanded="false" />
             <element signature="n#!!block;n#loadXMLDoc#0" expanded="false" />
             <element signature="e#111#206#0" expanded="false" />
             <element signature="e#216#301#0" expanded="false" />
-            <element signature="n#!!block;n#loadDatatypes1#0" expanded="false" />
-            <element signature="e#1066#1728#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/forms/infoPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49741825" vertical-offset="0" max-vertical-offset="581">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/forms/registrationPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38037866" vertical-offset="0" max-vertical-offset="4760">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Differences/accessModifiers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5851979" vertical-offset="0" max-vertical-offset="5610">
+          <caret line="20" column="59" selection-start-line="19" selection-start-column="20" selection-end-line="20" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/embededXmlMenu/xmlMenu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5601318" vertical-offset="0" max-vertical-offset="607">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="n#level_1#0;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#1;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#2;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#3;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#4;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#5;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#6;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#7;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#8;n#level_1#1;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#2;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#0;n#level_1#2;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#3;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#0;n#level_1#3;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#1;n#level_1#3;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#2;n#level_1#3;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_2#3;n#level_1#3;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#4;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#5;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#6;n#menu#0;n#!!top" expanded="false" />
+            <element signature="n#level_1#7;n#menu#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/embededXmlMenu/menuXSLT.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39209226" vertical-offset="0" max-vertical-offset="607">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/embededXmlMenu/accessModifiers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23407917" vertical-offset="0" max-vertical-offset="5100">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
